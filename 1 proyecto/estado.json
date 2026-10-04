@@ -1,5 +1,5 @@
 {
-    "netflix": false,
+    "netflix": true,
     "spotify": true,
     "disney": false,
     "prime": false,
