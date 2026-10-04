@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J&J - Inicio</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="plataformas.html">🎮 Plataformas</a></li>
+                <li><a href="contacto.html">📞 Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Bienvenidos Clientes</h1>
+        <p>Somos <strong>J&J</strong>. Aquí descubrirás las plataformas que vendemos y los precios.</p>
+
+        <div class="tarjeta-inicio">
+            <div class="carrusel">
+                <img src="appletv.jpg" class="slider-img activa" alt="Plataforma 1">
+                <img src="crunchyroll.jpg" class="slider-img" alt="Plataforma 2">
+                <img src="disney.jpg" class="slider-img" alt="Plataforma 3">
+                <img src="hbo.jpg" class="slider-img" alt="Plataforma 4">
+                <img src="netflix.jpg" class="slider-img" alt="Plataforma 5">
+                <img src="paramount.jpg" class="slider-img" alt="Plataforma 6">
+                <img src="prime.jpg" class="slider-img" alt="Plataforma 7">
+                <img src="spotify.jpg" class="slider-img" alt="Plataforma 8">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const imagenes = document.querySelectorAll('.slider-img');
+        let actual = 0;
+
+        function cambiarImagen() {
+            imagenes[actual].classList.remove('activa');
+            actual = (actual + 1) % imagenes.length;
+            imagenes[actual].classList.add('activa');
+        }
+
+        setInterval(cambiarImagen, 1000); 
+    </script>
+</body>
+</html>

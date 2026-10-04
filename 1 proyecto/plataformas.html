@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J&J - Plataformas</title>
+    <!-- Conectamos el archivo de diseño CSS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+              <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="plataformas.html">🎮 Plataformas</a></li>
+                 <li><a href="contacto.html">📞 Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Nuestras Plataformas</h1>
+        <p>Aquí encontrarás el catálogo de cuentas y accesos que tenemos disponibles en <strong>J&J</strong>.</p>
+
+        <div class="contenedor-plataformas">
+    <a href="netflix.html" class="tarjeta-link">
+        <div class="tarjeta">
+           <span id="btn-netflix" class="indicador"></span>
+            <img src="netflix.jpg" alt="Netflix">
+            <h3>Netflix</h3>
+            <p id="txt-netflix" class="disponible">Cargando...</p>
+            <p class="precio">$92 MXN</p>
+        </div>
+    </a>
+    <a href="spotify.html" class="tarjeta-link">
+        <div class="tarjeta">
+       <span id="btn-spotify" class="indicador"></span>
+            <img src="spotify.jpg" alt="Spotify">
+            <h3>Spotify</h3>
+            <p id="txt-spotify" class="disponible">Cargando...</p>
+            <p class="precio">$50 MXN</p>
+        </div>
+    </a>
+    <a href="disney.html" class="tarjeta-link">
+        <div class="tarjeta">
+            <span id="btn-disney" class="indicador"></span>
+            <img src="disney.jpg" alt="Disney Plus">
+            <h3>Disney+</h3>
+            <p id="txt-disney" class="disponible">Cargando...</p>
+            <p class="precio">$64 MXN</p>
+        </div>
+    </a>
+    <a href="prime.html" class="tarjeta-link">
+        <div class="tarjeta">
+            <span id="btn-prime" class="indicador"></span>
+            <img src="prime.jpg" alt="Prime Video">
+            <h3>Prime Video</h3>
+            <p id="txt-prime" class="no-disponible">Agotado</p>
+            <p class="precio">$44 MXN</p>
+        </div>
+    </a>
+    <a href="hbo.html" class="tarjeta-link">
+        <div class="tarjeta">
+            <span id="btn-hbo" class="indicador"></span>
+            <img src="hbo.jpg" alt="HBO Max">
+            <h3>HBO Max</h3>
+            <p id="txt-hbo" class="disponible">Cargando...</p>
+            <p class="precio">$44 MXN</p>
+        </div>
+    </a>
+    <a href="paramount.html" class="tarjeta-link">
+        <div class="tarjeta">
+            <span id="btn-paramount" class="indicador"></span>
+            <img src="paramount.jpg" alt="Paramount Plus">
+            <h3>Paramount+</h3>
+            <p id="txt-paramount" class="disponible">Cargando...</p>
+            <p class="precio">$44 MXN</p>
+        </div>
+    </a>
+    <a href="crunchyroll.html" class="tarjeta-link">
+        <div class="tarjeta">
+            <span id="btn-crunchyroll" class="indicador"></span>
+            <img src="crunchyroll.jpg" alt="Crunchyroll">
+            <h3>Crunchyroll</h3>
+            <p id="txt-crunchyroll" class="disponible">Cargando...</p>
+            <p class="precio">$40 MXN</p>
+        </div>
+    </a>
+    <a href="vix.html" class="tarjeta-link">
+        <div class="tarjeta">
+            <span id="btn-vix" class="indicador"></span>
+            <img src="vix.jpg" alt="Vix">
+            <h3>Vix</h3>
+            <p id="txt-vix" class="no-disponible">Agotado</p>
+            <p class="precio">$40 MXN</p>
+        </div>
+    </a>
+
+        </div>
+    </main>
+<script>
+        async function cargarEstadoPlataformas() {
+            try {
+                let respuesta = await fetch('estado.json');
+                let estadoPlataformas = await respuesta.json();
+
+                for (const [key, disponible] of Object.entries(estadoPlataformas)) {
+                    const indicador = document.getElementById(`btn-${key}`);
+                    const textoEstado = document.getElementById(`txt-${key}`);
+
+                    if (indicador && textoEstado) {
+                        indicador.classList.remove('disponible', 'agotado');
+
+                        if (disponible) {
+                            indicador.classList.add('disponible');
+                            textoEstado.textContent = "Disponible";
+                            textoEstado.className = "disponible";
+                        } else {
+                            indicador.classList.add('agotado');
+                            textoEstado.textContent = "Agotado";
+                            textoEstado.className = "no-disponible";
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error("Error al leer el archivo estado.json:", error);
+            }
+        }
+
+        window.onload = cargarEstadoPlataformas;
+    </script>
+</body>
+</html>
