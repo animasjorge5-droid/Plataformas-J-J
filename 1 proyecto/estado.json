@@ -2,10 +2,10 @@
     "netflix": true,
     "spotify": true,
     "disney": true,
-    "prime": false,
+    "prime": true,
     "hbo": true,
     "paramount": true,
     "appletv": true,
     "crunchyroll": true,
-    "vix": false
+    "vix": true
 }
