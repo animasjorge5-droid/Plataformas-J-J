@@ -1,8 +1,8 @@
 {
-    "netflix": true,
+    "netflix": false,
     "spotify": true,
     "disney": true,
-    "prime": true,
+    "prime": false,
     "hbo": true,
     "paramount": true,
     "appletv": true,
