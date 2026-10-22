@@ -2,7 +2,7 @@
     "netflix": false,
     "spotify": true,
     "disney": true,
-    "prime": false,
+    "prime": true,
     "hbo": true,
     "paramount": true,
     "appletv": true,
