@@ -9,45 +9,30 @@
 <body>
     <header>
         <nav>
+            <a href="index.html" class="logo-marca">J&<span>J</span></a>
             <ul>
                 <li><a href="index.html">🏠 Inicio</a></li>
-                <li><a href="plataformas.html">🎮 Plataformas</a></li>
+                <li><a href="plataformas.html" class="activo">🎮 Plataformas</a></li>
                 <li><a href="contacto.html">📞 Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="detalle-main">
-        <div class="tarjeta-detalle">
-            <h1>Disney+</h1>
-            <p style="text-align: center; color: #00e5ff; font-weight: bold; font-size: 18px; margin-bottom: 25px;">
-                Precio Individual: $64 MXN (Mensual)
-            </p>
-
-            <h3>✨ Características del Servicio</h3>
-            <p>
-                ✔️ Servicio 100% <strong>mensual</strong>.<br>
-                ✔️ Contenido de Disney, Pixar, Marvel, Star Wars y National Geographic en alta definición.<br>
-                ✔️ Cuentas estables y garantizadas.
-            </p>
-
-            <h3>🔥 Combos Disponibles</h3>
-            <p>
-                📦 <strong>Plan 2 ($190 MXN):</strong> Disney + HBO Max + Netflix<br>
-                📦 <strong>Plan 4 ($310 MXN):</strong> Todas las plataformas
-            </p>
-
-            <h3>💳 ¿Cómo Comprar?</h3>
-            <p>
-                1. Da clic en el botón de contacto para mandar mensaje.<br>
-                2. Indica la plataforma o el combo que deseas adquirir.<br>
-                3. Realiza tu pago por transferencia y recibe tus accesos.
-            </p>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="contacto.html" class="boton-whatsapp">💬 Comprar por Contacto</a>
-            </div>
+        <!-- Botón para regresar fácilmente -->
+        <div style="margin-bottom: 20px;">
+            <a href="plataformas.html" style="color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 15px;">
+                ⬅ Volver al Catálogo
+            </a>
         </div>
-    </main>
-</body>
-</html>
+
+        <div class="tarjeta-detalle">
+            <!-- Cabecera con Logo y Estado en tiempo real -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="disney.jpg" alt="Disney+" style="width: 150px; height: 95px; object-fit: contain; background: #000; border-radius: 10px; padding: 8px; border: 1px solid rgba(0, 229, 255, 0.4);">
+                <h1 style="margin: 10px 0 5px 0;">Disney+</h1>
+                <span id="estado-badge" class="disponible" style="font-size: 14px;">Verificando disponibilidad...</span>
+            </div>
+
+            <p style="text-align: center; color: #00e5ff; font-weight: bold; font-size: 20px; margin-bottom: 25px; background: rgba(0, 229, 255, 0.1); padding: 10px; border-radius: 8px;">
+                Precio Individual:
