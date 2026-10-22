@@ -52,3 +52,60 @@
 
             <h3>💳 ¿Cómo Comprar?</h3>
             <p>
+                1. Da clic en el botón de WhatsApp de aquí abajo.<br>
+                2. Confirma tu pedido de Apple TV+.<br>
+                3. Realiza tu pago y recibe tus accesos al instante.
+            </p>
+
+            <!-- Botones de Acción Directa a WhatsApp -->
+            <div style="text-align: center; margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                <a id="btn-wa-individual" href="https://wa.me/522213613862?text=Hola%20J%26J,%20quiero%20comprar%20Apple%20TV%2B%20Individual%20por%20%2450%20MXN.%20%C2%BFMe%20pasas%20los%20datos%20de%20pago%3F" target="_blank" class="boton-whatsapp">
+                    💬 Comprar Cuenta ($50 MXN)
+                </a>
+
+                <a id="btn-wa-combo" href="https://wa.me/522213613862?text=Hola%20J%26J,%20me%20interesa%20armar%20un%20Combo%20que%20incluya%20Apple%20TV%2B.%20%C2%BFMe%20das%20informaci%C3%B3n%3F" target="_blank" class="btn-cta" style="margin-top: 0; font-size: 16px; padding: 14px 22px;">
+                    🔥 Cotizar en Combo
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const CLAVE_PLATAFORMA = "appletv"; 
+        const NOMBRE_PLATAFORMA = "Apple TV+";
+        const PRECIO_PLATAFORMA = "$50 MXN";
+        const TELEFONO_WA = "522213613862";
+
+        async function verificarDisponibilidadDetalle() {
+            const badge = document.getElementById('estado-badge');
+            const btnIndividual = document.getElementById('btn-wa-individual');
+
+            try {
+                let respuesta = await fetch('estado.json');
+                let estado = await respuesta.json();
+                let disponible = estado[CLAVE_PLATAFORMA];
+
+                if (disponible) {
+                    badge.textContent = "🟢 Disponible para entrega inmediata";
+                    badge.className = "disponible";
+                    const msg = `Hola J&J, quiero comprar ${NOMBRE_PLATAFORMA} Individual por ${PRECIO_PLATAFORMA}. ¿Me pasas los datos de pago?`;
+                    btnIndividual.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(msg)}`;
+                } else {
+                    badge.textContent = "🔴 Agotado temporalmente";
+                    badge.className = "no-disponible";
+                    btnIndividual.removeAttribute('href');
+                    btnIndividual.textContent = "🚫 Sin Stock Individual";
+                    btnIndividual.style.backgroundColor = "#4a3e5d";
+                    btnIndividual.style.color = "#9e93b0";
+                    btnIndividual.style.boxShadow = "none";
+                    btnIndividual.style.pointerEvents = "none";
+                }
+            } catch (error) {
+                badge.textContent = "🟢 Disponible";
+            }
+        }
+
+        window.onload = verificarDisponibilidadDetalle;
+    </script>
+</body>
+</html>
