@@ -9,8 +9,9 @@
 <body>
     <header>
         <nav>
+            <a href="index.html" class="logo-marca">J&<span>J</span></a>
             <ul>
-                <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="index.html" class="activo">🏠 Inicio</a></li>
                 <li><a href="plataformas.html">🎮 Plataformas</a></li>
                 <li><a href="contacto.html">📞 Contacto</a></li>
             </ul>
@@ -19,18 +20,38 @@
 
     <main>
         <h1>Bienvenidos Clientes</h1>
-        <p>Somos <strong>J&J</strong>. Aquí descubrirás las plataformas que vendemos y los precios.</p>
+        <p class="subtitulo">Somos <strong>J&J</strong>. Aquí descubrirás las plataformas que vendemos y los mejores precios con entrega inmediata.</p>
 
         <div class="tarjeta-inicio">
             <div class="carrusel">
-                <img src="appletv.jpg" class="slider-img activa" alt="Plataforma 1">
-                <img src="crunchyroll.jpg" class="slider-img" alt="Plataforma 2">
-                <img src="disney.jpg" class="slider-img" alt="Plataforma 3">
-                <img src="hbo.jpg" class="slider-img" alt="Plataforma 4">
-                <img src="netflix.jpg" class="slider-img" alt="Plataforma 5">
-                <img src="paramount.jpg" class="slider-img" alt="Plataforma 6">
-                <img src="prime.jpg" class="slider-img" alt="Plataforma 7">
-                <img src="spotify.jpg" class="slider-img" alt="Plataforma 8">
+                <img src="appletv.jpg" class="slider-img activa" alt="Apple TV+">
+                <img src="crunchyroll.jpg" class="slider-img" alt="Crunchyroll">
+                <img src="disney.jpg" class="slider-img" alt="Disney+">
+                <img src="hbo.jpg" class="slider-img" alt="HBO Max">
+                <img src="netflix.jpg" class="slider-img" alt="Netflix">
+                <img src="paramount.jpg" class="slider-img" alt="Paramount+">
+                <img src="prime.jpg" class="slider-img" alt="Prime Video">
+                <img src="spotify.jpg" class="slider-img" alt="Spotify">
+            </div>
+        </div>
+
+        <a href="plataformas.html" class="btn-cta">🚀 Ver Catálogo y Precios</a>
+
+        <div class="pasos-compra">
+            <div class="paso">
+                <span>1️⃣</span>
+                <h4>Elige tu cuenta</h4>
+                <p>Revisa nuestro catálogo en tiempo real.</p>
+            </div>
+            <div class="paso">
+                <span>2️⃣</span>
+                <h4>Haz tu pedido</h4>
+                <p>Presiona el botón de compra hacia WhatsApp.</p>
+            </div>
+            <div class="paso">
+                <span>3️⃣</span>
+                <h4>Disfruta al instante</h4>
+                <p>Realiza tu pago y recibe tu acceso con garantía.</p>
             </div>
         </div>
     </main>
@@ -45,7 +66,7 @@
             imagenes[actual].classList.add('activa');
         }
 
-        setInterval(cambiarImagen, 1000); 
+        setInterval(cambiarImagen, 3000);
     </script>
 </body>
 </html>
