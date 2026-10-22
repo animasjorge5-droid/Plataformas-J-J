@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J&J - Plataformas</title>
-    <!-- Conectamos el archivo de diseño CSS -->
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header>
         <nav>
+            <a href="index.html" class="logo-marca">J&<span>J</span></a>
             <ul>
                 <li><a href="index.html">🏠 Inicio</a></li>
-                <li><a href="plataformas.html">🎮 Plataformas</a></li>
+                <li><a href="plataformas.html" class="activo">🎮 Plataformas</a></li>
                 <li><a href="contacto.html">📞 Contacto</a></li>
             </ul>
         </nav>
@@ -20,125 +20,189 @@
 
     <main>
         <h1>Nuestras Plataformas</h1>
-        <p>Aquí encontrarás el catálogo de cuentas y accesos que tenemos disponibles en <strong>J&J</strong>.</p>
+        <p class="subtitulo">Aquí encontrarás el catálogo de cuentas y accesos disponibles en <strong>J&J</strong>. Toca el logo para ver detalles o compra directo por WhatsApp.</p>
 
         <div class="contenedor-plataformas">
-            <a href="netflix.html" class="tarjeta-link">
-                <div class="tarjeta">
-                    <span id="btn-netflix" class="indicador"></span>
+            <!-- Netflix -->
+            <div class="tarjeta" id="card-netflix">
+                <span id="btn-netflix" class="indicador"></span>
+                <a href="netflix.html" class="tarjeta-info-link">
                     <img src="netflix.jpg" alt="Netflix">
                     <h3>Netflix</h3>
-                    <p id="txt-netflix" class="disponible">Cargando...</p>
-                    <p class="precio">$92 MXN</p>
-                </div>
-            </a>
+                </a>
+                <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
+                <p id="txt-netflix" class="disponible">Cargando...</p>
+                <p class="precio">$92 MXN</p>
+                <a id="wa-netflix" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
+            </div>
 
-            <a href="spotify.html" class="tarjeta-link">
-                <div class="tarjeta">
-                    <span id="btn-spotify" class="indicador"></span>
+            <!-- Spotify -->
+            <div class="tarjeta" id="card-spotify">
+                <span id="btn-spotify" class="indicador"></span>
+                <a href="spotify.html" class="tarjeta-info-link">
                     <img src="spotify.jpg" alt="Spotify">
                     <h3>Spotify</h3>
-                    <p id="txt-spotify" class="disponible">Cargando...</p>
-                    <p class="precio">$50 MXN</p>
-                </div>
-            </a>
+                </a>
+                <p class="detalles-cuenta">Cuenta Individual • 30 Días</p>
+                <p id="txt-spotify" class="disponible">Cargando...</p>
+                <p class="precio">$50 MXN</p>
+                <a id="wa-spotify" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
+            </div>
 
-            <a href="disney.html" class="tarjeta-link">
-                <div class="tarjeta">
-                    <span id="btn-disney" class="indicador"></span>
+            <!-- Disney+ -->
+            <div class="tarjeta" id="card-disney">
+                <span id="btn-disney" class="indicador"></span>
+                <a href="disney.html" class="tarjeta-info-link">
                     <img src="disney.jpg" alt="Disney Plus">
                     <h3>Disney+</h3>
-                    <p id="txt-disney" class="disponible">Cargando...</p>
-                    <p class="precio">$64 MXN</p>
-                </div>
-            </a>
+                </a>
+                <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
+                <p id="txt-disney" class="disponible">Cargando...</p>
+                <p class="precio">$64 MXN</p>
+                <a id="wa-disney" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
+            </div>
 
-            <a href="prime.html" class="tarjeta-link">
-                <div class="tarjeta">
-                    <span id="btn-prime" class="indicador"></span>
+            <!-- Prime Video -->
+            <div class="tarjeta" id="card-prime">
+                <span id="btn-prime" class="indicador"></span>
+                <a href="prime.html" class="tarjeta-info-link">
                     <img src="prime.jpg" alt="Prime Video">
                     <h3>Prime Video</h3>
-                    <p id="txt-prime" class="no-disponible">Agotado</p>
-                    <p class="precio">$44 MXN</p>
-                </div>
-            </a>
+                </a>
+                <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
+                <p id="txt-prime" class="no-disponible">Cargando...</p>
+                <p class="precio">$44 MXN</p>
+                <a id="wa-prime" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
+            </div>
 
-            <a href="hbo.html" class="tarjeta-link">
-                <div class="tarjeta">
-                    <span id="btn-hbo" class="indicador"></span>
+            <!-- HBO Max -->
+            <div class="tarjeta" id="card-hbo">
+                <span id="btn-hbo" class="indicador"></span>
+                <a href="hbo.html" class="tarjeta-info-link">
                     <img src="hbo.jpg" alt="HBO Max">
                     <h3>HBO Max</h3>
-                    <p id="txt-hbo" class="disponible">Cargando...</p>
-                    <p class="precio">$44 MXN</p>
-                </div>
-            </a>
+                </a>
+                <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
+                <p id="txt-hbo" class="disponible">Cargando...</p>
+                <p class="precio">$44 MXN</p>
+                <a id="wa-hbo" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
+            </div>
 
-            <a href="paramount.html" class="tarjeta-link">
-                <div class="tarjeta">
-                    <span id="btn-paramount" class="indicador"></span>
+            <!-- Paramount+ -->
+            <div class="tarjeta" id="card-paramount">
+                <span id="btn-paramount" class="indicador"></span>
+                <a href="paramount.html" class="tarjeta-info-link">
                     <img src="paramount.jpg" alt="Paramount Plus">
                     <h3>Paramount+</h3>
-                    <p id="txt-paramount" class="disponible">Cargando...</p>
-                    <p class="precio">$44 MXN</p>
-                </div>
-            </a>
+                </a>
+                <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
+                <p id="txt-paramount" class="disponible">Cargando...</p>
+                <p class="precio">$44 MXN</p>
+                <a id="wa-paramount" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
+            </div>
 
-            <a href="crunchyroll.html" class="tarjeta-link">
-                <div class="tarjeta">
-                    <span id="btn-crunchyroll" class="indicador"></span>
+            <!-- Crunchyroll -->
+            <div class="tarjeta" id="card-crunchyroll">
+                <span id="btn-crunchyroll" class="indicador"></span>
+                <a href="crunchyroll.html" class="tarjeta-info-link">
                     <img src="crunchyroll.jpg" alt="Crunchyroll">
                     <h3>Crunchyroll</h3>
-                    <p id="txt-crunchyroll" class="disponible">Cargando...</p>
-                    <p class="precio">$40 MXN</p>
-                </div>
-            </a>
+                </a>
+                <p class="detalles-cuenta">1 Perfil Mega Fan • 30 Días</p>
+                <p id="txt-crunchyroll" class="disponible">Cargando...</p>
+                <p class="precio">$40 MXN</p>
+                <a id="wa-crunchyroll" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
+            </div>
 
-            <!-- Bloque de Apple TV corregido -->
-            <a href="appletv.html" class="tarjeta-link">
-                <div class="tarjeta">
-                    <span id="btn-appletv" class="indicador"></span>
+            <!-- Apple TV+ -->
+            <div class="tarjeta" id="card-appletv">
+                <span id="btn-appletv" class="indicador"></span>
+                <a href="appletv.html" class="tarjeta-info-link">
                     <img src="appletv.jpg" alt="Apple TV+">
                     <h3>Apple TV+</h3>
-                    <p id="txt-appletv" class="disponible">Cargando...</p>
-                    <p class="precio">$50 MXN</p>
-                </div>
-            </a>
+                </a>
+                <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
+                <p id="txt-appletv" class="disponible">Cargando...</p>
+                <p class="precio">$50 MXN</p>
+                <a id="wa-appletv" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
+            </div>
 
-            <a href="vix.html" class="tarjeta-link">
-                <div class="tarjeta">
-                    <span id="btn-vix" class="indicador"></span>
+            <!-- Vix -->
+            <div class="tarjeta" id="card-vix">
+                <span id="btn-vix" class="indicador"></span>
+                <a href="vix.html" class="tarjeta-info-link">
                     <img src="vix.jpg" alt="Vix">
                     <h3>Vix</h3>
-                    <p id="txt-vix" class="no-disponible">Agotado</p>
-                    <p class="precio">$40 MXN</p>
-                </div>
-            </a>
+                </a>
+                <p class="detalles-cuenta">1 Perfil Premium • 30 Días</p>
+                <p id="txt-vix" class="no-disponible">Cargando...</p>
+                <p class="precio">$40 MXN</p>
+                <a id="wa-vix" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
+            </div>
         </div>
     </main>
 
     <script>
+        const TELEFONO_WA = "522213613862";
+
+        const infoCatalogo = {
+            netflix: { nombre: "Netflix", precio: "$92 MXN" },
+            spotify: { nombre: "Spotify", precio: "$50 MXN" },
+            disney: { nombre: "Disney+", precio: "$64 MXN" },
+            prime: { nombre: "Prime Video", precio: "$44 MXN" },
+            hbo: { nombre: "HBO Max", precio: "$44 MXN" },
+            paramount: { nombre: "Paramount+", precio: "$44 MXN" },
+            crunchyroll: { nombre: "Crunchyroll", precio: "$40 MXN" },
+            appletv: { nombre: "Apple TV+", precio: "$50 MXN" },
+            vix: { nombre: "Vix", precio: "$40 MXN" }
+        };
+
+        function configurarTarjeta(key, disponible) {
+            const indicador = document.getElementById(`btn-${key}`);
+            const textoEstado = document.getElementById(`txt-${key}`);
+            const botonWa = document.getElementById(`wa-${key}`);
+            const tarjeta = document.getElementById(`card-${key}`);
+            const datos = infoCatalogo[key];
+
+            if (!indicador || !textoEstado || !botonWa || !datos) return;
+
+            indicador.classList.remove('disponible', 'agotado');
+            
+            if (disponible) {
+                indicador.classList.add('disponible');
+                textoEstado.textContent = "Disponible";
+                textoEstado.className = "disponible";
+                tarjeta.classList.remove('tarjeta-agotada');
+
+                const mensaje = `Hola J&J, me interesa comprar una cuenta de *${datos.nombre}* (${datos.precio}). ¿Me pasas los datos de pago?`;
+                botonWa.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(mensaje)}`;
+                botonWa.textContent = "💬 Comprar";
+                botonWa.classList.remove('deshabilitado');
+            } else {
+                indicador.classList.add('agotado');
+                textoEstado.textContent = "Agotado";
+                textoEstado.className = "no-disponible";
+                tarjeta.classList.add('tarjeta-agotada');
+
+                botonWa.removeAttribute('href');
+                botonWa.textContent = "🚫 Sin Stock";
+                botonWa.classList.add('deshabilitado');
+            }
+        }
+
         async function cargarEstadoPlataformas() {
+            // Configura los enlaces por defecto antes de leer el JSON
+            for (const key of Object.keys(infoCatalogo)) {
+                const esAgotadoInicial = (key === 'prime' || key === 'vix');
+                configurarTarjeta(key, !esAgotadoInicial);
+            }
+
             try {
                 let respuesta = await fetch('estado.json');
                 let estadoPlataformas = await respuesta.json();
 
                 for (const [key, disponible] of Object.entries(estadoPlataformas)) {
-                    const indicador = document.getElementById(`btn-${key}`);
-                    const textoEstado = document.getElementById(`txt-${key}`);
-
-                    if (indicador && textoEstado) {
-                        indicador.classList.remove('disponible', 'agotado');
-
-                        if (disponible) {
-                            indicador.classList.add('disponible');
-                            textoEstado.textContent = "Disponible";
-                            textoEstado.className = "disponible";
-                        } else {
-                            indicador.classList.add('agotado');
-                            textoEstado.textContent = "Agotado";
-                            textoEstado.className = "no-disponible";
-                        }
-                    }
+                    configurarTarjeta(key, disponible);
                 }
             } catch (error) {
                 console.error("Error al leer el archivo estado.json:", error);
