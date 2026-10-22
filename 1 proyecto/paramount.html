@@ -94,4 +94,18 @@
                     badge.textContent = "🔴 Agotado temporalmente";
                     badge.className = "no-disponible";
                     btnIndividual.removeAttribute('href');
-                    btnIndividual
+                    btnIndividual.textContent = "🚫 Sin Stock Individual";
+                    btnIndividual.style.backgroundColor = "#4a3e5d";
+                    btnIndividual.style.color = "#9e93b0";
+                    btnIndividual.style.boxShadow = "none";
+                    btnIndividual.style.pointerEvents = "none";
+                }
+            } catch (error) {
+                badge.textContent = "🟢 Disponible";
+            }
+        }
+
+        window.onload = verificarDisponibilidadDetalle;
+    </script>
+</body>
+</html>
