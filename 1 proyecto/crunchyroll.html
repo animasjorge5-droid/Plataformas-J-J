@@ -9,39 +9,29 @@
 <body>
     <header>
         <nav>
+            <a href="index.html" class="logo-marca">J&<span>J</span></a>
             <ul>
                 <li><a href="index.html">🏠 Inicio</a></li>
-                <li><a href="plataformas.html">🎮 Plataformas</a></li>
+                <li><a href="plataformas.html" class="activo">🎮 Plataformas</a></li>
                 <li><a href="contacto.html">📞 Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="detalle-main">
-        <div class="tarjeta-detalle">
-            <h1>Crunchyroll</h1>
-            <p style="text-align: center; color: #00e5ff; font-weight: bold; font-size: 18px; margin-bottom: 25px;">
-                Precio Individual: $40 MXN (Mensual)
-            </p>
-
-            <h3>✨ Características del Servicio</h3>
-            <p>
-                ✔️ Servicio 100% <strong>mensual</strong>.<br>
-                ✔️ Anime en estrenos simultáneos, sin anuncios y en alta definición.<br>
-                ✔️ Cuentas estables y garantizadas.
-            </p>
-
-            <h3>💳 ¿Cómo Comprar?</h3>
-            <p>
-                1. Da clic en el botón de contacto para mandar mensaje.<br>
-                2. Indica la plataforma que deseas adquirir.<br>
-                3. Realiza tu pago y recibe tu acceso al instante.
-            </p>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="contacto.html" class="boton-whatsapp">💬 Comprar por Contacto</a>
-            </div>
+        <!-- Botón para regresar fácilmente -->
+        <div style="margin-bottom: 20px;">
+            <a href="plataformas.html" style="color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 15px;">
+                ⬅ Volver al Catálogo
+            </a>
         </div>
-    </main>
-</body>
-</html>
+
+        <div class="tarjeta-detalle">
+            <!-- Cabecera con Logo y Estado en tiempo real -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="crunchyroll.jpg" alt="Crunchyroll" style="width: 150px; height: 95px; object-fit: contain; background: #000; border-radius: 10px; padding: 8px; border: 1px solid rgba(0, 229, 255, 0.4);">
+                <h1 style="margin: 10px 0 5px 0;">Crunchyroll</h1>
+                <span id="estado-badge" class="disponible" style="font-size: 14px;">Verificando disponibilidad...</span>
+            </div>
+
+            <p style="text-align: center; color: #00e5ff; font-weight: bold; font-size: 20px; margin-bottom: 25px; background: rgba(0, 229, 255, 0.1
