@@ -1,15 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #1a0b2e;
     color: #f0f0f0;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
+/* Barra superior fija */
 header {
-    background-color: #000000;
-    padding: 15px 25px;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 15px 30px;
     border-bottom: 2px solid #00e5ff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
+}
+
+header nav {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo-marca {
+    font-size: 26px;
+    font-weight: 900;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+.logo-marca span {
+    color: #00e5ff;
 }
 
 header nav ul {
@@ -17,8 +49,9 @@ header nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; 
-    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 header nav ul li a {
@@ -27,38 +60,78 @@ header nav ul li a {
     border: 2px solid #00e5ff;
     color: #00e5ff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 9px 18px;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
     transition: all 0.3s ease;
 }
 
-header nav ul li a:hover {
+header nav ul li a:hover,
+header nav ul li a.activo {
     background-color: #00e5ff;
     color: #120524;
     box-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
     transform: translateY(-2px);
-    text-decoration: none;
 }
 
+/* Contenedor Principal Ampliado */
 main {
     text-align: center;
-    max-width: 600px;
-    margin: 100px auto;
+    max-width: 1050px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+.subtitulo {
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #d8d0e5;
+}
+
+/* Catálogo de Plataformas (Grid Responsivo) */
 .contenedor-plataformas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px; 
-    width: 90%; 
-    max-width: 1200px; 
-    margin: 30px auto; 
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin: 30px auto;
 }
 
-.tarjeta-link {
+.tarjeta {
+    position: relative;
+    background-color: #24113e;
+    border: 2px solid #00e5ff;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 22px rgba(0, 229, 255, 0.7);
+}
+
+.tarjeta-agotada {
+    border-color: rgba(0, 229, 255, 0.35);
+    opacity: 0.78;
+}
+
+.tarjeta-info-link {
     text-decoration: none;
     color: inherit;
     display: block;
@@ -66,123 +139,106 @@ main {
 
 .tarjeta img {
     width: 100%;
-    height: 120px; 
+    height: 130px;
     object-fit: contain;
     background-color: #000000;
     border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.tarjeta {
-    background-color: #24113e; 
-    border: 2px solid #00e5ff; 
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.tarjeta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.7);
+    padding: 8px;
+    margin-bottom: 12px;
 }
 
 .tarjeta h3 {
-    color: #ffea00; 
-    font-size: 16px;
-    margin-bottom: 8px;
+    color: #ffea00;
+    font-size: 20px;
+    margin: 5px 0;
 }
 
-.disponible {
-    color: #00ff66; 
-    font-weight: bold;
-    font-size: 13px;
-    margin-bottom: 5px;
-}
-
-.no-disponible {
-    color: #ff3366; 
-    font-weight: bold;
-    font-size: 13px;
-    margin-bottom: 5px;
+.detalles-cuenta {
+    color: #b5a8c9;
+    font-size: 12px;
+    margin: 4px 0 10px 0;
 }
 
 .precio {
     color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 8px 0 14px 0;
 }
 
-.contenedor-whatsapp {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
-
-.tarjeta-whatsapp {
-    background-color: #24113e; 
-    border: 2px solid #00e5ff; 
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
-}
-
-.tarjeta-whatsapp h3 {
-    color: #ffea00; 
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.tarjeta-whatsapp p {
-    color: #ffffff;
-    font-size: 15px;
-    margin-bottom: 25px;
-}
-
-.boton-whatsapp {
-    display: inline-block;
-    background-color: #25d366; 
+/* Botón de compra en cada tarjeta */
+.btn-comprar {
+    display: block;
+    background-color: #25d366;
     color: #ffffff;
     text-decoration: none;
-    padding: 14px 25px;
-    font-size: 18px;
+    padding: 10px 15px;
+    font-size: 15px;
     font-weight: bold;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+    transition: all 0.25s ease;
 }
 
-.boton-whatsapp:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.9), 0 0 10px rgba(255, 234, 0, 0.5);
+.btn-comprar:hover {
     background-color: #2be475;
+    box-shadow: 0 0 16px rgba(37, 211, 102, 0.85);
+    transform: scale(1.02);
 }
 
+.btn-comprar.deshabilitado {
+    background-color: #4a3e5d;
+    color: #9e93b0;
+    box-shadow: none;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* Indicadores Luminosos (Verde / Rojo) */
+.indicador {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    z-index: 5;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+.indicador.disponible {
+    background-color: #00ff55;
+    box-shadow: 0 0 10px #00ff55;
+}
+
+.indicador.agotado {
+    background-color: #ff3333;
+    box-shadow: 0 0 10px #ff3333;
+}
+
+p.disponible {
+    color: #00ff55;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+p.no-disponible {
+    color: #ff3333;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+/* Carrusel de Inicio (Corregido para no encimar PNGs) */
 .tarjeta-inicio {
-    max-width: 400px;
-    margin: 20px auto;
-    background-color: #24113e; 
-    border: 2px solid #00e5ff; 
+    max-width: 440px;
+    margin: 25px auto;
+    background-color: #24113e;
+    border: 2px solid #00e5ff;
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
-}
-
-.tarjeta-inicio img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    background-color: #000000;
-    border-radius: 8px;
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .tarjeta-inicio img {
-        height: 160px;
-    }
 }
 
 .carrusel {
@@ -201,20 +257,129 @@ main {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    background-color: #000000; /* Evita que se transparente la imagen de atrás */
+    padding: 15px;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
 }
 
 .slider-img.activa {
     opacity: 1;
+    z-index: 2;
 }
 
-@media (max-width: 768px) {
-    .carrusel {
-        height: 160px;
-    }
+/* Botón CTA Inicio y Pasos */
+.btn-cta {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #00e5ff;
+    color: #120524;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 28px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+    transition: all 0.3s ease;
 }
 
+.btn-cta:hover {
+    background-color: #ffea00;
+    box-shadow: 0 0 22px rgba(255, 234, 0, 0.8);
+    transform: translateY(-3px);
+}
+
+.pasos-compra {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 55px;
+}
+
+.paso {
+    background-color: #24113e;
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.paso span {
+    font-size: 28px;
+}
+
+.paso h4 {
+    color: #ffea00;
+    margin: 10px 0 6px 0;
+    font-size: 18px;
+}
+
+.paso p {
+    font-size: 14px;
+    color: #d8d0e5;
+    margin: 0;
+}
+
+/* Sección de Contacto */
+.contenedor-whatsapp {
+    max-width: 520px;
+    margin: 40px auto;
+}
+
+.tarjeta-whatsapp {
+    background-color: #24113e;
+    border: 2px solid #00e5ff;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.tarjeta-whatsapp h3 {
+    color: #ffea00;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.tarjeta-whatsapp p {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.boton-whatsapp {
+    display: inline-block;
+    background-color: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.9);
+    background-color: #2be475;
+}
+
+.info-extra-contacto {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 229, 255, 0.3);
+    text-align: left;
+}
+
+.info-extra-contacto p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #d8d0e5;
+}
+
+/* Páginas de Detalle Individual */
 .detalle-main {
     max-width: 800px;
     margin: 40px auto;
@@ -250,40 +415,15 @@ main {
     line-height: 1.6;
     margin-bottom: 10px;
 }
-.tarjeta-link {
-    display: contents;
-}
 
-.tarjeta {
-    position: relative;
-}
-.indicador {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    z-index: 5;
-    border: 2px solid rgba(0, 0, 0, 0.3);
-}
-
-.indicador.disponible {
-    background-color: #00ff55;
-    box-shadow: 0 0 8px #00ff55;
-}
-
-.indicador.agotado {
-    background-color: #ff3333;
-    box-shadow: 0 0 8px #ff3333;
-}
-
-p.disponible {
-    color: #00ff55;
-    font-weight: bold;
-}
-
-p.no-disponible {
-    color: #ff3333;
-    font-weight: bold;
+@media (max-width: 768px) {
+    header nav {
+        justify-content: center;
+    }
+    .carrusel {
+        height: 170px;
+    }
+    h1 {
+        font-size: 28px;
+    }
 }
