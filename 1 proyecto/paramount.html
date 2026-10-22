@@ -9,18 +9,32 @@
 <body>
     <header>
         <nav>
+            <a href="index.html" class="logo-marca">J&<span>J</span></a>
             <ul>
                 <li><a href="index.html">🏠 Inicio</a></li>
-                <li><a href="plataformas.html">🎮 Plataformas</a></li>
+                <li><a href="plataformas.html" class="activo">🎮 Plataformas</a></li>
                 <li><a href="contacto.html">📞 Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="detalle-main">
+        <!-- Botón para regresar fácilmente -->
+        <div style="margin-bottom: 20px;">
+            <a href="plataformas.html" style="color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 15px;">
+                ⬅ Volver al Catálogo
+            </a>
+        </div>
+
         <div class="tarjeta-detalle">
-            <h1>Paramount+</h1>
-            <p style="text-align: center; color: #00e5ff; font-weight: bold; font-size: 18px; margin-bottom: 25px;">
+            <!-- Cabecera con Logo y Estado en tiempo real -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="paramount.jpg" alt="Paramount+" style="width: 150px; height: 95px; object-fit: contain; background: #000; border-radius: 10px; padding: 8px; border: 1px solid rgba(0, 229, 255, 0.4);">
+                <h1 style="margin: 10px 0 5px 0;">Paramount+</h1>
+                <span id="estado-badge" class="disponible" style="font-size: 14px;">Verificando disponibilidad...</span>
+            </div>
+
+            <p style="text-align: center; color: #00e5ff; font-weight: bold; font-size: 20px; margin-bottom: 25px; background: rgba(0, 229, 255, 0.1); padding: 10px; border-radius: 8px;">
                 Precio Individual: $44 MXN (Mensual)
             </p>
 
@@ -31,17 +45,53 @@
                 ✔️ Cuentas estables y garantizadas.
             </p>
 
+            <h3>🔥 ¿Buscas un Combo?</h3>
+            <p style="color: #00e5ff; font-style: italic; font-size: 14px; background-color: #1a0b2e; border-left: 4px solid #ffea00; padding: 12px 15px; border-radius: 6px;">
+                📦 Si deseas combinar <strong>Paramount+</strong> con otra plataforma o adquirir el <strong>Plan 4 ($310 MXN con todas las plataformas)</strong>, ¡pregúntanos directamente y te armamos tu paquete con precio especial!
+            </p>
+
             <h3>💳 ¿Cómo Comprar?</h3>
             <p>
-                1. Da clic en el botón de contacto para mandar mensaje.<br>
-                2. Indica la plataforma que deseas adquirir.<br>
+                1. Da clic en el botón de WhatsApp de aquí abajo.<br>
+                2. Confirma tu pedido de Paramount+.<br>
                 3. Realiza tu pago y recibe tus datos al instante.
             </p>
 
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="contacto.html" class="boton-whatsapp">💬 Comprar por Contacto</a>
+            <!-- Botones de Acción Directa a WhatsApp -->
+            <div style="text-align: center; margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                <a id="btn-wa-individual" href="https://wa.me/522213613862?text=Hola%20J%26J,%20quiero%20comprar%20Paramount%2B%20Individual%20por%20%2444%20MXN.%20%C2%BFMe%20pasas%20los%20datos%20de%20pago%3F" target="_blank" class="boton-whatsapp">
+                    💬 Comprar Cuenta ($44 MXN)
+                </a>
+
+                <a id="btn-wa-combo" href="https://wa.me/522213613862?text=Hola%20J%26J,%20me%20interesa%20armar%20un%20Combo%20que%20incluya%20Paramount%2B.%20%C2%BFMe%20das%20informaci%C3%B3n%3F" target="_blank" class="btn-cta" style="margin-top: 0; font-size: 16px; padding: 14px 22px;">
+                    🔥 Cotizar en Combo
+                </a>
             </div>
         </div>
     </main>
-</body>
-</html>
+
+    <script>
+        const CLAVE_PLATAFORMA = "paramount"; 
+        const NOMBRE_PLATAFORMA = "Paramount+";
+        const PRECIO_PLATAFORMA = "$44 MXN";
+        const TELEFONO_WA = "522213613862";
+
+        async function verificarDisponibilidadDetalle() {
+            const badge = document.getElementById('estado-badge');
+            const btnIndividual = document.getElementById('btn-wa-individual');
+
+            try {
+                let respuesta = await fetch('estado.json');
+                let estado = await respuesta.json();
+                let disponible = estado[CLAVE_PLATAFORMA];
+
+                if (disponible) {
+                    badge.textContent = "🟢 Disponible para entrega inmediata";
+                    badge.className = "disponible";
+                    const msg = `Hola J&J, quiero comprar ${NOMBRE_PLATAFORMA} Individual por ${PRECIO_PLATAFORMA}. ¿Me pasas los datos de pago?`;
+                    btnIndividual.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(msg)}`;
+                } else {
+                    badge.textContent = "🔴 Agotado temporalmente";
+                    badge.className = "no-disponible";
+                    btnIndividual.removeAttribute('href');
+                    btnIndividual
