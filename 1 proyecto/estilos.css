@@ -10,10 +10,10 @@ body {
     padding: 0;
 }
 
-/* Barra superior fija */
+/* Barra superior fija y optimizada para celular sin amontonarse */
 header {
     background-color: rgba(0, 0, 0, 0.95);
-    padding: 15px 30px;
+    padding: 12px 20px;
     border-bottom: 2px solid #00e5ff;
     position: sticky;
     top: 0;
@@ -27,12 +27,12 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-wrap: nowrap;
+    gap: 10px;
 }
 
 .logo-marca {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 900;
     color: #ffffff;
     text-decoration: none;
@@ -50,8 +50,8 @@ header nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
+    align-items: center;
+    gap: 8px;
 }
 
 header nav ul li a {
@@ -60,12 +60,13 @@ header nav ul li a {
     border: 2px solid #00e5ff;
     color: #00e5ff;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
-    padding: 9px 18px;
+    padding: 8px 12px;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 header nav ul li a:hover,
@@ -230,7 +231,7 @@ p.no-disponible {
     margin: 4px 0;
 }
 
-/* Carrusel de Inicio (Corregido para no encimar PNGs) */
+/* Carrusel de Inicio */
 .tarjeta-inicio {
     max-width: 440px;
     margin: 25px auto;
@@ -257,7 +258,7 @@ p.no-disponible {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    background-color: #000000; /* Evita que se transparente la imagen de atrás */
+    background-color: #000000;
     padding: 15px;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
@@ -417,9 +418,6 @@ p.no-disponible {
 }
 
 @media (max-width: 768px) {
-    header nav {
-        justify-content: center;
-    }
     .carrusel {
         height: 170px;
     }
