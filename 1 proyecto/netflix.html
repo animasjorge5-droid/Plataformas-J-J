@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J&J - Netflix</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos.css?v=3">
 </head>
 <body>
     <header>
@@ -19,7 +19,6 @@
     </header>
 
     <main class="detalle-main">
-        <!-- Botón para regresar fácilmente -->
         <div style="margin-bottom: 20px;">
             <a href="plataformas.html" style="color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 15px;">
                 ⬅ Volver al Catálogo
@@ -27,7 +26,6 @@
         </div>
 
         <div class="tarjeta-detalle">
-            <!-- Cabecera con Logo y Estado en tiempo real -->
             <div style="text-align: center; margin-bottom: 20px;">
                 <img src="netflix.jpg" alt="Netflix" style="width: 150px; height: 95px; object-fit: contain; background: #000; border-radius: 10px; padding: 8px; border: 1px solid rgba(0, 229, 255, 0.4);">
                 <h1 style="margin: 10px 0 5px 0;">Netflix</h1>
@@ -64,7 +62,6 @@
                 4. Recibe inmediatamente tu <strong>correo y contraseña</strong>.
             </p>
 
-            <!-- Botones de Acción Directa a WhatsApp -->
             <div style="text-align: center; margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
                 <a id="btn-wa-individual" href="https://wa.me/522213613862?text=Hola%20J%26J,%20quiero%20comprar%20Netflix%20Individual%20por%20%2492%20MXN.%20%C2%BFMe%20pasas%20los%20datos%20de%20pago%3F" target="_blank" class="boton-whatsapp">
                     💬 Comprar Cuenta ($92 MXN)
@@ -78,7 +75,6 @@
     </main>
 
     <script>
-        // Configura aquí los datos de esta página para que se conecte sola a estado.json
         const CLAVE_PLATAFORMA = "netflix"; 
         const NOMBRE_PLATAFORMA = "Netflix";
         const PRECIO_PLATAFORMA = "$92 MXN";
