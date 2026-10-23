@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J&J - Plataformas</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos.css?v=3">
 </head>
 <body>
     <header>
@@ -70,7 +70,7 @@
                     <h3>Prime Video</h3>
                 </a>
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
-                <p id="txt-prime" class="no-disponible">Cargando...</p>
+                <p id="txt-prime" class="disponible">Cargando...</p>
                 <p class="precio">$44 MXN</p>
                 <a id="wa-prime" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
             </div>
@@ -135,7 +135,7 @@
                     <h3>Vix</h3>
                 </a>
                 <p class="detalles-cuenta">1 Perfil Premium • 30 Días</p>
-                <p id="txt-vix" class="no-disponible">Cargando...</p>
+                <p id="txt-vix" class="disponible">Cargando...</p>
                 <p class="precio">$40 MXN</p>
                 <a id="wa-vix" href="#" target="_blank" class="btn-comprar">💬 Comprar</a>
             </div>
@@ -191,12 +191,6 @@
         }
 
         async function cargarEstadoPlataformas() {
-            // Configura los enlaces por defecto antes de leer el JSON
-            for (const key of Object.keys(infoCatalogo)) {
-                const esAgotadoInicial = (key === 'prime' || key === 'vix');
-                configurarTarjeta(key, !esAgotadoInicial);
-            }
-
             try {
                 let respuesta = await fetch('estado.json');
                 let estadoPlataformas = await respuesta.json();
