@@ -6,6 +6,6 @@
     "hbo": false,
     "paramount": true,
     "appletv": true,
-    "crunchyroll": true,
+    "crunchyroll": false,
     "vix": false
 }
