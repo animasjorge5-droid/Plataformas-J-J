@@ -4,7 +4,7 @@
     "disney": true,
     "prime": true,
     "hbo": true,
-    "paramount": true,
+    "paramount": false,
     "appletv": true,
     "crunchyroll": true,
     "vix": false
