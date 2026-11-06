@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Catálogo completo de cuentas de streaming en J&J. Netflix, Disney+, Max, Spotify, Prime Video y más con entrega inmediata y garantía.">
     <title>J&J - Catálogo de Plataformas</title>
-    <link rel="stylesheet" href="estilos.css?v=6">
+    <link rel="stylesheet" href="estilos.css?v=7">
 </head>
 <body>
     <header>
@@ -36,7 +36,7 @@
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                 <p class="precio">$92 MXN</p>
                 <p id="txt-netflix" class="disponible">Verificando...</p>
-                <a id="btn-netflix" href="netflix.html" class="btn-comprar">Comprar Cuenta</a>
+                <a href="netflix.html" class="btn-comprar">Ver Información</a>
             </article>
 
             <!-- 2. Spotify -->
@@ -47,7 +47,7 @@
                 <p class="detalles-cuenta">Cuenta Individual • 30 Días</p>
                 <p class="precio">$50 MXN</p>
                 <p id="txt-spotify" class="disponible">Verificando...</p>
-                <a id="btn-spotify" href="spotify.html" class="btn-comprar">Comprar Cuenta</a>
+                <a href="spotify.html" class="btn-comprar">Ver Información</a>
             </article>
 
             <!-- 3. Disney+ -->
@@ -58,7 +58,7 @@
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                 <p class="precio">$64 MXN</p>
                 <p id="txt-disney" class="disponible">Verificando...</p>
-                <a id="btn-disney" href="disney.html" class="btn-comprar">Comprar Cuenta</a>
+                <a href="disney.html" class="btn-comprar">Ver Información</a>
             </article>
 
             <!-- 4. Prime Video -->
@@ -69,7 +69,7 @@
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                 <p class="precio">$44 MXN</p>
                 <p id="txt-prime" class="disponible">Verificando...</p>
-                <a id="btn-prime" href="prime.html" class="btn-comprar">Comprar Cuenta</a>
+                <a href="prime.html" class="btn-comprar">Ver Información</a>
             </article>
 
             <!-- 5. Max -->
@@ -80,7 +80,7 @@
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                 <p class="precio">$44 MXN</p>
                 <p id="txt-max" class="disponible">Verificando...</p>
-                <a id="btn-max" href="max.html" class="btn-comprar">Comprar Cuenta</a>
+                <a href="max.html" class="btn-comprar">Ver Información</a>
             </article>
 
             <!-- 6. Paramount+ -->
@@ -91,7 +91,7 @@
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                 <p class="precio">$44 MXN</p>
                 <p id="txt-paramount" class="disponible">Verificando...</p>
-                <a id="btn-paramount" href="paramount.html" class="btn-comprar">Comprar Cuenta</a>
+                <a href="paramount.html" class="btn-comprar">Ver Información</a>
             </article>
 
             <!-- 7. Crunchyroll -->
@@ -102,7 +102,7 @@
                 <p class="detalles-cuenta">Cuenta Completa • 30 Días</p>
                 <p class="precio">$40 MXN</p>
                 <p id="txt-crunchyroll" class="disponible">Verificando...</p>
-                <a id="btn-crunchyroll" href="crunchyroll.html" class="btn-comprar">Comprar Cuenta</a>
+                <a href="crunchyroll.html" class="btn-comprar">Ver Información</a>
             </article>
 
             <!-- 8. Apple TV+ -->
@@ -113,7 +113,7 @@
                 <p class="detalles-cuenta">Cuenta Completa • 30 Días</p>
                 <p class="precio">$44 MXN</p>
                 <p id="txt-appletv" class="disponible">Verificando...</p>
-                <a id="btn-appletv" href="appletv.html" class="btn-comprar">Comprar Cuenta</a>
+                <a href="appletv.html" class="btn-comprar">Ver Información</a>
             </article>
 
             <!-- 9. Vix -->
@@ -124,7 +124,7 @@
                 <p class="detalles-cuenta">Cuenta Completa • 30 Días</p>
                 <p class="precio">$40 MXN</p>
                 <p id="txt-vix" class="disponible">Verificando...</p>
-                <a id="btn-vix" href="vix.html" class="btn-comprar">Comprar Cuenta</a>
+                <a href="vix.html" class="btn-comprar">Ver Información</a>
             </article>
 
         </section>
@@ -140,7 +140,7 @@
         </div>
     </footer>
 
-    <!-- Script para leer estado.json y actualizar tarjetas automáticamente -->
+    <!-- Script optimizado: Solo cambia el indicador visual y texto, permitiendo acceso libre a la info -->
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             const plataformas = ["netflix", "spotify", "disney", "prime", "max", "paramount", "crunchyroll", "appletv", "vix"];
@@ -155,26 +155,17 @@
                     let tarjeta = document.getElementById(`card-${clave}`);
                     let indicador = document.getElementById(`ind-${clave}`);
                     let texto = document.getElementById(`txt-${clave}`);
-                    let boton = document.getElementById(`btn-${clave}`);
 
                     if (disponible) {
                         indicador.className = "indicador disponible";
-                        texto.textContent = "Disponible";
+                        texto.textContent = "🟢 Disponible";
                         texto.className = "disponible";
                         if(tarjeta) tarjeta.classList.remove('tarjeta-agotada');
-                        if(boton) {
-                            boton.textContent = "Comprar Cuenta";
-                            boton.classList.remove('deshabilitado');
-                        }
                     } else {
                         indicador.className = "indicador agotado";
-                        texto.textContent = "Agotado";
+                        texto.textContent = "🔴 Agotado";
                         texto.className = "no-disponible";
                         if(tarjeta) tarjeta.classList.add('tarjeta-agotada');
-                        if(boton) {
-                            boton.textContent = "Sin Stock";
-                            boton.classList.add('deshabilitado');
-                        }
                     }
                 });
             } catch (error) {
