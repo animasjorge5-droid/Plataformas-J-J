@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Catálogo completo de cuentas de streaming en J&J. Netflix, Disney+, Max, Spotify, Prime Video y más con entrega inmediata y garantía.">
     <title>J&J - Catálogo de Plataformas</title>
-    <link rel="stylesheet" href="estilos.css?v=8">
+    <link rel="stylesheet" href="estilos.css?v=9">
 </head>
 <body>
     <header>
@@ -34,9 +34,10 @@
                 <img src="netflix.jpg" alt="Logo de Netflix">
                 <h3>Netflix</h3>
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
-                <p class="precio">$92 MXN</p>
+                <p class="precio" data-precio="$92 MXN">$92 MXN</p>
                 <p id="txt-netflix" class="disponible">Verificando...</p>
-                <a href="netflix.html" class="btn-comprar">Ver Información</a>
+                <!-- El botón verde redirige a WhatsApp y la tarjeta lleva a la info -->
+                <a id="btn-wa-netflix" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 2. Spotify -->
@@ -45,9 +46,9 @@
                 <img src="spotify.jpg" alt="Logo de Spotify">
                 <h3>Spotify</h3>
                 <p class="detalles-cuenta">Cuenta Individual • 30 Días</p>
-                <p class="precio">$50 MXN</p>
+                <p class="precio" data-precio="$50 MXN">$50 MXN</p>
                 <p id="txt-spotify" class="disponible">Verificando...</p>
-                <a href="spotify.html" class="btn-comprar">Ver Información</a>
+                <a id="btn-wa-spotify" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 3. Disney+ -->
@@ -56,9 +57,9 @@
                 <img src="disney.jpg" alt="Logo de Disney+">
                 <h3>Disney+</h3>
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
-                <p class="precio">$64 MXN</p>
+                <p class="precio" data-precio="$64 MXN">$64 MXN</p>
                 <p id="txt-disney" class="disponible">Verificando...</p>
-                <a href="disney.html" class="btn-comprar">Ver Información</a>
+                <a id="btn-wa-disney" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 4. Prime Video -->
@@ -67,9 +68,9 @@
                 <img src="prime.jpg" alt="Logo de Prime Video">
                 <h3>Prime Video</h3>
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
-                <p class="precio">$44 MXN</p>
+                <p class="precio" data-precio="$44 MXN">$44 MXN</p>
                 <p id="txt-prime" class="disponible">Verificando...</p>
-                <a href="prime.html" class="btn-comprar">Ver Información</a>
+                <a id="btn-wa-prime" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 5. Max -->
@@ -78,9 +79,9 @@
                 <img src="max.jpg" alt="Logo de Max">
                 <h3>Max</h3>
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
-                <p class="precio">$44 MXN</p>
+                <p class="precio" data-precio="$44 MXN">$44 MXN</p>
                 <p id="txt-max" class="disponible">Verificando...</p>
-                <a href="max.html" class="btn-comprar">Ver Información</a>
+                <a id="btn-wa-max" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 6. Paramount+ -->
@@ -89,9 +90,9 @@
                 <img src="paramount.jpg" alt="Logo de Paramount+">
                 <h3>Paramount+</h3>
                 <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
-                <p class="precio">$44 MXN</p>
+                <p class="precio" data-precio="$44 MXN">$44 MXN</p>
                 <p id="txt-paramount" class="disponible">Verificando...</p>
-                <a href="paramount.html" class="btn-comprar">Ver Información</a>
+                <a id="btn-wa-paramount" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 7. Crunchyroll -->
@@ -100,9 +101,9 @@
                 <img src="crunchyroll.jpg" alt="Logo de Crunchyroll">
                 <h3>Crunchyroll</h3>
                 <p class="detalles-cuenta">Cuenta Completa • 30 Días</p>
-                <p class="precio">$40 MXN</p>
+                <p class="precio" data-precio="$40 MXN">$40 MXN</p>
                 <p id="txt-crunchyroll" class="disponible">Verificando...</p>
-                <a href="crunchyroll.html" class="btn-comprar">Ver Información</a>
+                <a id="btn-wa-crunchyroll" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 8. Apple TV+ -->
@@ -111,9 +112,9 @@
                 <img src="appletv.jpg" alt="Logo de Apple TV+">
                 <h3>Apple TV+</h3>
                 <p class="detalles-cuenta">Cuenta Completa • 30 Días</p>
-                <p class="precio">$44 MXN</p>
+                <p class="precio" data-precio="$44 MXN">$44 MXN</p>
                 <p id="txt-appletv" class="disponible">Verificando...</p>
-                <a href="appletv.html" class="btn-comprar">Ver Información</a>
+                <a id="btn-wa-appletv" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 9. Vix -->
@@ -122,9 +123,9 @@
                 <img src="vix.jpg" alt="Logo de Vix">
                 <h3>Vix</h3>
                 <p class="detalles-cuenta">Cuenta Completa • 30 Días</p>
-                <p class="precio">$40 MXN</p>
+                <p class="precio" data-precio="$40 MXN">$40 MXN</p>
                 <p id="txt-vix" class="disponible">Verificando...</p>
-                <a href="vix.html" class="btn-comprar">Ver Información</a>
+                <a id="btn-wa-vix" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
         </section>
@@ -140,32 +141,62 @@
         </div>
     </footer>
 
-    <!-- Script que solo actualiza el indicador verde/rojo y el texto de estado -->
+    <!-- Script de control de stock y enlaces automáticos a WhatsApp -->
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
-            const plataformas = ["netflix", "spotify", "disney", "prime", "max", "paramount", "crunchyroll", "appletv", "vix"];
+            const plataformas = [
+                { clave: "netflix", nombre: "Netflix" },
+                { clave: "spotify", nombre: "Spotify" },
+                { clave: "disney", nombre: "Disney+" },
+                { clave: "prime", nombre: "Prime Video" },
+                { clave: "max", nombre: "Max" },
+                { clave: "paramount", nombre: "Paramount+" },
+                { clave: "crunchyroll", nombre: "Crunchyroll" },
+                { clave: "appletv", nombre: "Apple TV+" },
+                { clave: "vix", nombre: "Vix" }
+            ];
+
+            const TELEFONO_WA = "522213613862";
 
             try {
                 let respuesta = await fetch('estado.json');
                 if (!respuesta.ok) throw new Error("No se pudo cargar el estado");
                 let estado = await respuesta.json();
 
-                plataformas.forEach(clave => {
-                    let disponible = estado[clave];
-                    let tarjeta = document.getElementById(`card-${clave}`);
-                    let indicador = document.getElementById(`ind-${clave}`);
-                    let texto = document.getElementById(`txt-${clave}`);
+                plataformas.forEach(plat => {
+                    let disponible = estado[plat.clave];
+                    let tarjeta = document.getElementById(`card-${plat.clave}`);
+                    let indicador = document.getElementById(`ind-${plat.clave}`);
+                    let texto = document.getElementById(`txt-${plat.clave}`);
+                    let botonWa = document.getElementById(`btn-wa-${plat.clave}`);
+                    let elementoPrecio = tarjeta.querySelector('.precio');
+                    let precioStr = elementoPrecio ? elementoPrecio.getAttribute('data-precio') : "";
 
                     if (disponible) {
                         indicador.className = "indicador disponible";
                         texto.textContent = "🟢 Disponible";
                         texto.className = "disponible";
                         if(tarjeta) tarjeta.classList.remove('tarjeta-agotada');
+                        
+                        // Configurar botón para compra directa a WhatsApp
+                        if(botonWa) {
+                            let msg = `Hola J&J, quiero comprar ${plat.nombre} Individual por ${precioStr}. ¿Me pasas los datos de pago?`;
+                            botonWa.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(msg)}`;
+                            botonWa.textContent = "💬 Comprar Cuenta";
+                            botonWa.classList.remove('deshabilitado');
+                        }
                     } else {
                         indicador.className = "indicador agotado";
                         texto.textContent = "🔴 Agotado";
                         texto.className = "no-disponible";
                         if(tarjeta) tarjeta.classList.add('tarjeta-agotada');
+                        
+                        // Desactivar botón si no hay stock
+                        if(botonWa) {
+                            botonWa.removeAttribute('href');
+                            botonWa.textContent = "🚫 Sin Stock";
+                            botonWa.classList.add('deshabilitado');
+                        }
                     }
                 });
             } catch (error) {
