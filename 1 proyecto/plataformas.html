@@ -2,10 +2,44 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Catálogo completo de cuentas de streaming en J&J. Netflix, Disney+, Max, Spotify, Prime Video y más con entrega inmediata y garantía.">
     <title>J&J - Catálogo de Plataformas</title>
-    <link rel="stylesheet" href="estilos.css?v=10">
+    <link rel="stylesheet" href="estilos.css?v=11">
+    <style>
+        /* Asegura que todas las tarjetas tengan exactamente la misma altura y alineación */
+        .enlace-tarjeta {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        /* Ajustes responsivos para cuadrícula tipo PC en celular */
+        @media (max-width: 768px) {
+            .encabezado-pagina h1 {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+            .contenedor-plataformas {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+            }
+            .enlace-tarjeta {
+                margin-bottom: 8px;
+            }
+            .detalles-cuenta {
+                min-height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1.25;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -32,117 +66,117 @@
             <article class="tarjeta" id="card-netflix">
                 <span id="ind-netflix" class="indicador"></span>
                 <a href="netflix.html" class="enlace-tarjeta">
-                    <img src="netflix.jpg" alt="Logo de Netflix">
+                    <img src="netflix.jpg" alt="Logo de Netflix" decoding="async">
                     <h3>Netflix</h3>
                     <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                     <p class="precio" data-precio="$92 MXN">$92 MXN</p>
                     <p id="txt-netflix" class="disponible">Verificando...</p>
                 </a>
-                <a id="btn-wa-netflix" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
+                <a id="btn-wa-netflix" href="#" target="_blank" rel="noopener noreferrer" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 2. Spotify -->
             <article class="tarjeta" id="card-spotify">
                 <span id="ind-spotify" class="indicador"></span>
                 <a href="spotify.html" class="enlace-tarjeta">
-                    <img src="spotify.jpg" alt="Logo de Spotify">
+                    <img src="spotify.jpg" alt="Logo de Spotify" decoding="async">
                     <h3>Spotify</h3>
                     <p class="detalles-cuenta">Cuenta Individual • 30 Días</p>
                     <p class="precio" data-precio="$50 MXN">$50 MXN</p>
                     <p id="txt-spotify" class="disponible">Verificando...</p>
                 </a>
-                <a id="btn-wa-spotify" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
+                <a id="btn-wa-spotify" href="#" target="_blank" rel="noopener noreferrer" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 3. Disney+ -->
             <article class="tarjeta" id="card-disney">
                 <span id="ind-disney" class="indicador"></span>
                 <a href="disney.html" class="enlace-tarjeta">
-                    <img src="disney.jpg" alt="Logo de Disney+">
+                    <img src="disney.jpg" alt="Logo de Disney+" loading="lazy" decoding="async">
                     <h3>Disney+</h3>
                     <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                     <p class="precio" data-precio="$64 MXN">$64 MXN</p>
                     <p id="txt-disney" class="disponible">Verificando...</p>
                 </a>
-                <a id="btn-wa-disney" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
+                <a id="btn-wa-disney" href="#" target="_blank" rel="noopener noreferrer" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 4. Prime Video -->
             <article class="tarjeta" id="card-prime">
                 <span id="ind-prime" class="indicador"></span>
                 <a href="prime.html" class="enlace-tarjeta">
-                    <img src="prime.jpg" alt="Logo de Prime Video">
+                    <img src="prime.jpg" alt="Logo de Prime Video" loading="lazy" decoding="async">
                     <h3>Prime Video</h3>
                     <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                     <p class="precio" data-precio="$44 MXN">$44 MXN</p>
                     <p id="txt-prime" class="disponible">Verificando...</p>
                 </a>
-                <a id="btn-wa-prime" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
+                <a id="btn-wa-prime" href="#" target="_blank" rel="noopener noreferrer" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 5. Max -->
             <article class="tarjeta" id="card-max">
                 <span id="ind-max" class="indicador"></span>
                 <a href="max.html" class="enlace-tarjeta">
-                    <img src="max.jpg" alt="Logo de Max">
+                    <img src="max.jpg" alt="Logo de Max" loading="lazy" decoding="async">
                     <h3>Max</h3>
                     <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                     <p class="precio" data-precio="$44 MXN">$44 MXN</p>
                     <p id="txt-max" class="disponible">Verificando...</p>
                 </a>
-                <a id="btn-wa-max" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
+                <a id="btn-wa-max" href="#" target="_blank" rel="noopener noreferrer" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 6. Paramount+ -->
             <article class="tarjeta" id="card-paramount">
                 <span id="ind-paramount" class="indicador"></span>
                 <a href="paramount.html" class="enlace-tarjeta">
-                    <img src="paramount.jpg" alt="Logo de Paramount+">
+                    <img src="paramount.jpg" alt="Logo de Paramount+" loading="lazy" decoding="async">
                     <h3>Paramount+</h3>
                     <p class="detalles-cuenta">1 Perfil • 30 Días • Garantía</p>
                     <p class="precio" data-precio="$44 MXN">$44 MXN</p>
                     <p id="txt-paramount" class="disponible">Verificando...</p>
                 </a>
-                <a id="btn-wa-paramount" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
+                <a id="btn-wa-paramount" href="#" target="_blank" rel="noopener noreferrer" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 7. Crunchyroll -->
             <article class="tarjeta" id="card-crunchyroll">
                 <span id="ind-crunchyroll" class="indicador"></span>
                 <a href="crunchyroll.html" class="enlace-tarjeta">
-                    <img src="crunchyroll.jpg" alt="Logo de Crunchyroll">
+                    <img src="crunchyroll.jpg" alt="Logo de Crunchyroll" loading="lazy" decoding="async">
                     <h3>Crunchyroll</h3>
                     <p class="detalles-cuenta">Cuenta Completa • 30 Días</p>
                     <p class="precio" data-precio="$40 MXN">$40 MXN</p>
                     <p id="txt-crunchyroll" class="disponible">Verificando...</p>
                 </a>
-                <a id="btn-wa-crunchyroll" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
+                <a id="btn-wa-crunchyroll" href="#" target="_blank" rel="noopener noreferrer" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 8. Apple TV+ -->
             <article class="tarjeta" id="card-appletv">
                 <span id="ind-appletv" class="indicador"></span>
                 <a href="appletv.html" class="enlace-tarjeta">
-                    <img src="appletv.jpg" alt="Logo de Apple TV+">
+                    <img src="appletv.jpg" alt="Logo de Apple TV+" loading="lazy" decoding="async">
                     <h3>Apple TV+</h3>
                     <p class="detalles-cuenta">Cuenta Completa • 30 Días</p>
                     <p class="precio" data-precio="$44 MXN">$44 MXN</p>
                     <p id="txt-appletv" class="disponible">Verificando...</p>
                 </a>
-                <a id="btn-wa-appletv" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
+                <a id="btn-wa-appletv" href="#" target="_blank" rel="noopener noreferrer" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
             <!-- 9. Vix -->
             <article class="tarjeta" id="card-vix">
                 <span id="ind-vix" class="indicador"></span>
                 <a href="vix.html" class="enlace-tarjeta">
-                    <img src="vix.jpg" alt="Logo de Vix">
+                    <img src="vix.jpg" alt="Logo de Vix" loading="lazy" decoding="async">
                     <h3>Vix</h3>
                     <p class="detalles-cuenta">Cuenta Completa • 30 Días</p>
                     <p class="precio" data-precio="$40 MXN">$40 MXN</p>
                     <p id="txt-vix" class="disponible">Verificando...</p>
                 </a>
-                <a id="btn-wa-vix" href="#" target="_blank" class="btn-comprar">Comprar Cuenta</a>
+                <a id="btn-wa-vix" href="#" target="_blank" rel="noopener noreferrer" class="btn-comprar">Comprar Cuenta</a>
             </article>
 
         </section>
@@ -157,15 +191,6 @@
             </ul>
         </div>
     </footer>
-
-    <!-- Script para limpiar subrayados de enlaces en tarjetas y gestionar stock/WhatsApp -->
-    <style>
-        .enlace-tarjeta {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-    </style>
 
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
@@ -184,7 +209,8 @@
             const TELEFONO_WA = "522213613862";
 
             try {
-                let respuesta = await fetch('estado.json');
+                // Evita caché del navegador para mostrar siempre el stock real al instante
+                let respuesta = await fetch(`estado.json?t=${new Date().getTime()}`, { cache: 'no-store' });
                 if (!respuesta.ok) throw new Error("No se pudo cargar el estado");
                 let estado = await respuesta.json();
 
@@ -194,28 +220,32 @@
                     let indicador = document.getElementById(`ind-${plat.clave}`);
                     let texto = document.getElementById(`txt-${plat.clave}`);
                     let botonWa = document.getElementById(`btn-wa-${plat.clave}`);
-                    let elementoPrecio = tarjeta.querySelector('.precio');
+                    let elementoPrecio = tarjeta ? tarjeta.querySelector('.precio') : null;
                     let precioStr = elementoPrecio ? elementoPrecio.getAttribute('data-precio') : "";
 
                     if (disponible) {
-                        indicador.className = "indicador disponible";
-                        texto.textContent = "🟢 Disponible";
-                        texto.className = "disponible";
-                        if(tarjeta) tarjeta.classList.remove('tarjeta-agotada');
+                        if (indicador) indicador.className = "indicador disponible";
+                        if (texto) {
+                            texto.textContent = "🟢 Disponible";
+                            texto.className = "disponible";
+                        }
+                        if (tarjeta) tarjeta.classList.remove('tarjeta-agotada');
                         
-                        if(botonWa) {
+                        if (botonWa) {
                             let msg = `Hola J&J, quiero comprar ${plat.nombre} Individual por ${precioStr}. ¿Me pasas los datos de pago?`;
                             botonWa.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(msg)}`;
                             botonWa.textContent = "💬 Comprar Cuenta";
                             botonWa.classList.remove('deshabilitado');
                         }
                     } else {
-                        indicador.className = "indicador agotado";
-                        texto.textContent = "🔴 Agotado";
-                        texto.className = "no-disponible";
-                        if(tarjeta) tarjeta.classList.add('tarjeta-agotada');
+                        if (indicador) indicador.className = "indicador agotado";
+                        if (texto) {
+                            texto.textContent = "🔴 Agotado";
+                            texto.className = "no-disponible";
+                        }
+                        if (tarjeta) tarjeta.classList.add('tarjeta-agotada');
                         
-                        if(botonWa) {
+                        if (botonWa) {
                             botonWa.removeAttribute('href');
                             botonWa.textContent = "🚫 Sin Stock";
                             botonWa.classList.add('deshabilitado');
