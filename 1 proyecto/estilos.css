@@ -1,24 +1,43 @@
-* {
-    box-sizing: border-box;
+/* =========================================================
+   VARIABLES GLOBALES (Fácil mantenimiento de colores)
+   ========================================================= */
+:root {
+    --bg-fondo: #120524; /* Un tono ligeramente más oscuro para mayor contraste */
+    --bg-tarjeta: #24113e;
+    --color-primario: #00e5ff;
+    --color-secundario: #ffea00;
+    --color-exito: #25d366;
+    --color-error: #ff3333;
+    --texto-principal: #f0f0f0;
+    --texto-secundario: #d8d0e5;
+    --fuente-principal: 'Segoe UI', system-ui, Arial, sans-serif;
 }
 
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #1a0b2e;
-    color: #f0f0f0;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Barra superior fija */
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--bg-fondo);
+    color: var(--texto-principal);
+    line-height: 1.6;
+}
+
+/* =========================================================
+   BARRA SUPERIOR (HEADER)
+   ========================================================= */
 header {
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 12px 20px;
-    border-bottom: 2px solid #00e5ff;
+    background-color: rgba(18, 5, 36, 0.85);
+    backdrop-filter: blur(10px); /* Efecto cristal moderno */
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.3);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 header nav {
@@ -27,510 +46,178 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .logo-marca {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 900;
     color: #ffffff;
     text-decoration: none;
     letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
 }
 
 .logo-marca span {
-    color: #00e5ff;
+    color: var(--color-primario);
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
 }
 
 header nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
 
 header nav ul li a {
     display: inline-block;
-    background-color: #24113e;
-    border: 2px solid #00e5ff;
-    color: #00e5ff;
+    background-color: transparent;
+    border: 1px solid rgba(0, 229, 255, 0.5);
+    color: var(--color-primario);
     text-decoration: none;
     font-size: 14px;
-    font-weight: bold;
-    padding: 8px 14px;
+    font-weight: 600;
+    padding: 8px 16px;
     border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
     transition: all 0.3s ease;
-    white-space: nowrap;
 }
 
 header nav ul li a:hover,
 header nav ul li a.activo {
-    background-color: #00e5ff;
-    color: #120524;
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
-    transform: translateY(-2px);
+    background-color: var(--color-primario);
+    color: var(--bg-fondo);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
 }
 
-/* Contenedor Principal */
+/* =========================================================
+   CONTENEDOR PRINCIPAL Y HERO
+   ========================================================= */
 main {
     text-align: center;
     max-width: 1050px;
     margin: 40px auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+    font-size: clamp(28px, 5vw, 38px); /* Texto adaptable */
+    margin-bottom: 15px;
+    color: #ffffff;
 }
 
 .subtitulo {
     max-width: 650px;
     margin: 0 auto 30px auto;
     font-size: 16px;
-    line-height: 1.5;
-    color: #d8d0e5;
+    color: var(--texto-secundario);
 }
 
-/* Catálogo de Plataformas: FORZADO A 3 COLUMNAS SIEMPRE (Compu y Celular) */
+/* =========================================================
+   GRILLA DE PLATAFORMAS (Responsive Automático)
+   ========================================================= */
 .contenedor-plataformas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    /* Esto crea automáticamente las columnas dependiendo del tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
     width: 100%;
-    margin: 25px auto;
+    margin: 30px auto;
 }
 
 .tarjeta {
     position: relative;
-    background-color: #24113e;
-    border: 2px solid #00e5ff;
-    border-radius: 14px;
-    padding: 15px;
+    background-color: var(--bg-tarjeta);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 16px;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 0 12px rgba(0, 229, 255, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .tarjeta:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 22px rgba(0, 229, 255, 0.7);
+    transform: translateY(-8px);
+    border-color: var(--color-primario);
+    box-shadow: 0 12px 25px rgba(0, 229, 255, 0.2);
 }
 
 .tarjeta-agotada {
-    border-color: rgba(0, 229, 255, 0.35);
-    opacity: 0.78;
-}
-
-.tarjeta-info-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    opacity: 0.6;
+    filter: grayscale(0.5);
 }
 
 .tarjeta img {
     width: 100%;
     height: 120px;
     object-fit: contain;
-    background-color: #000000;
-    border-radius: 8px;
-    padding: 6px;
-    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
 .tarjeta h3 {
-    color: #ffea00;
-    font-size: 19px;
-    margin: 4px 0;
+    color: var(--color-secundario);
+    font-size: 20px;
+    margin: 5px 0;
 }
 
 .detalles-cuenta {
-    color: #b5a8c9;
-    font-size: 12px;
-    margin: 4px 0 8px 0;
+    color: var(--texto-secundario);
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .precio {
     color: #ffffff;
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 800;
-    margin: 6px 0 12px 0;
+    margin: 10px 0 15px 0;
 }
 
-/* Botón de compra en cada tarjeta */
-.btn-comprar {
-    display: block;
-    background-color: #25d366;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 12px;
-    font-size: 14px;
-    font-weight: bold;
+/* =========================================================
+   BOTONES E INDICADORES
+   ========================================================= */
+.btn-comprar, .btn-cta, .boton-whatsapp {
+    display: inline-block;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
-    transition: all 0.25s ease;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-comprar {
+    background-color: var(--color-exito);
+    color: #ffffff;
+    padding: 12px;
+    width: 100%;
+    font-size: 15px;
 }
 
 .btn-comprar:hover {
     background-color: #2be475;
-    box-shadow: 0 0 16px rgba(37, 211, 102, 0.85);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     transform: scale(1.02);
 }
 
 .btn-comprar.deshabilitado {
     background-color: #4a3e5d;
     color: #9e93b0;
-    box-shadow: none;
     pointer-events: none;
-    cursor: not-allowed;
 }
 
-/* Indicadores Luminosos (Verde / Rojo) */
-.indicador {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    z-index: 5;
-    border: 2px solid rgba(0, 0, 0, 0.4);
-}
-
-.indicador.disponible {
-    background-color: #00ff55;
-    box-shadow: 0 0 10px #00ff55;
-}
-
-.indicador.agotado {
-    background-color: #ff3333;
-    box-shadow: 0 0 10px #ff3333;
-}
-
-p.disponible {
-    color: #00ff55;
-    font-weight: bold;
-    font-size: 13px;
-    margin: 3px 0;
-}
-
-p.no-disponible {
-    color: #ff3333;
-    font-weight: bold;
-    font-size: 13px;
-    margin: 3px 0;
-}
-
-/* Carrusel de Inicio */
-.tarjeta-inicio {
-    max-width: 440px;
-    margin: 25px auto;
-    background-color: #24113e;
-    border: 2px solid #00e5ff;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
-}
-
-.carrusel {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #000000;
-}
-
-.slider-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background-color: #000000;
-    padding: 15px;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-}
-
-.slider-img.activa {
-    opacity: 1;
-    z-index: 2;
-}
-
-/* Botón CTA Inicio y Pasos */
 .btn-cta {
-    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--bg-fondo);
+    padding: 14px 32px;
+    font-size: 18px;
     margin-top: 15px;
-    background-color: #00e5ff;
-    color: #120524;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 14px 28px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4);
 }
 
-.btn-cta:hover {
-    background-color: #ffea00;
-    box-shadow: 0 0 22px rgba(255, 234, 0, 0.8);
-    transform: translateY(-3px);
-}
-
-.pasos-compra {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 45px;
-}
-
-.paso {
-    background-color: #24113e;
-    border: 1px solid rgba(0, 229, 255, 0.4);
-    border-radius: 12px;
-    padding: 18px 12px;
-}
-
-.paso span {
-    font-size: 26px;
-}
-
-.paso h4 {
-    color: #ffea00;
-    margin: 8px 0 5px 0;
-    font-size: 16px;
-}
-
-.paso p {
-    font-size: 13px;
-    color: #d8d0e5;
-    margin: 0;
-}
-
-/* Sección de Contacto */
-.contenedor-whatsapp {
-    max-width: 520px;
-    margin: 40px auto;
-}
-
-.tarjeta-whatsapp {
-    background-color: #24113e;
-    border: 2px solid #00e5ff;
-    border-radius: 12px;
-    padding: 35px 25px;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
-}
-
-.tarjeta-whatsapp h3 {
-    color: #ffea00;
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.tarjeta-whatsapp p {
-    color: #ffffff;
-    font-size: 15px;
-    margin-bottom: 25px;
-}
-
-.boton-whatsapp {
-    display: inline-block;
-    background-color: #25d366;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 14px 28px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.boton-whatsapp:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(37, 211, 102, 0.9);
-    background-color: #2be475;
-}
-
-.info-extra-contacto {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(0, 229, 255, 0.3);
-    text-align: left;
-}
-
-.info-extra-contacto p {
-    font-size: 14px;
-    margin-bottom: 8px;
-    color: #d8d0e5;
-}
-
-/* Páginas de Detalle Individual */
-.detalle-main {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: left;
-}
-
-.tarjeta-detalle {
-    background-color: #24113e;
-    border: 2px solid #00e5ff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
-}
-
-.tarjeta-detalle h1 {
-    color: #ffea00;
-    font-size: 26px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.tarjeta-detalle h3 {
-    color: #ffea00;
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.tarjeta-detalle p {
-    color: #ffffff;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-/* =========================================================
-   CONFIGURACIÓN PARA CELULAR (Mantiene las 3 columnas como en PC)
-   ========================================================= */
-@media (max-width: 768px) {
-    header {
-        padding: 10px 10px;
-    }
-
-    .logo-marca {
-        font-size: 18px;
-    }
-
-    header nav ul {
-        gap: 5px;
-    }
-
-    header nav ul li a {
-        font-size: 11px;
-        padding: 6px 8px;
-        border-width: 1.5px;
-    }
-
-    main {
-        margin: 20px auto;
-        padding: 0 8px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .subtitulo {
-        font-size: 13px;
-        margin-bottom: 18px;
-    }
-
-    /* Cuadrícula de 3x3 compacta en celular igual que en la compu */
-    .contenedor-plataformas {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        margin: 15px auto;
-    }
-
-    .tarjeta {
-        padding: 8px 6px;
-        border-radius: 10px;
-        border-width: 1.5px;
-    }
-
-    .tarjeta img {
-        height: 60px;
-        padding: 4px;
-        margin-bottom: 6px;
-        border-radius: 6px;
-    }
-
-    .tarjeta h3 {
-        font-size: 12px;
-        margin: 2px 0;
-    }
-
-    .detalles-cuenta {
-        font-size: 8.5px;
-        margin: 2px 0 4px 0;
-        line-height: 1.1;
-    }
-
-    p.disponible,
-    p.no-disponible {
-        font-size: 9.5px;
-        margin: 2px 0;
-    }
-
-    .precio {
-        font-size: 12px;
-        margin: 3px 0 6px 0;
-    }
-
-    .btn-comprar {
-        padding: 6px 4px;
-        font-size: 10px;
-        border-radius: 6px;
-    }
-
-    .indicador {
-        top: 6px;
-        left: 6px;
-        width: 9px;
-        height: 9px;
-    }
-
-    .carrusel {
-        height: 160px;
-    }
-
-    .pasos-compra {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        margin-top: 25px;
-    }
-
-    .paso {
-        padding: 10px 6px;
-    }
-
-    .paso span {
-        font-size: 18px;
-    }
-
-    .paso h4 {
-        font-size: 11px;
-    }
-
-    .paso p {
-        font-size: 9.5px;
-    }
-}
+.btn-cta:
