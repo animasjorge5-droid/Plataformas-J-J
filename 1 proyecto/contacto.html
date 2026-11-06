@@ -1,41 +1,68 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J&J - Contacto</title>
-    <link rel="stylesheet" href="estilos.css?v=3">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo-marca">J&<span>J</span></a>
-            <ul>
-                <li><a href="index.html">🏠 Inicio</a></li>
-                <li><a href="plataformas.html">🎮 Plataformas</a></li>
-                <li><a href="contacto.html" class="activo">📞 Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>Contacto Directo</h1>
-        <p class="subtitulo">¿Tienes dudas sobre alguna plataforma o requieres soporte con tu cuenta? Escríbenos directamente en <strong>J&J</strong> y te atenderemos al instante.</p>
+/* =========================================================
+   PREGUNTAS FRECUENTES (FAQ - PÁGINA CONTACTO)
+   ========================================================= */
+.seccion-faq {
+    max-width: 600px;
+    margin: 50px auto 20px auto;
+    text-align: left;
+}
 
-        <div class="contenedor-whatsapp">
-            <div class="tarjeta-whatsapp">
-                <h3>Atención al Cliente</h3>
-                <p>Haz clic en el botón de abajo para iniciar un chat en WhatsApp:</p>
-                
-                <a href="https://wa.me/522213613862?text=Hola%20J%26J,%20tengo%20una%20duda%20sobre%20las%20plataformas%20disponibles" target="_blank" class="boton-whatsapp">
-                    💬 Chatear por WhatsApp
-                </a>
+.seccion-faq h2 {
+    color: var(--color-secundario);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
 
-                <div class="info-extra-contacto">
-                    <p>💳 <strong>Métodos de pago:</strong> Transferencia SPEI, Depósito en OXXO y Mercado Pago.</p>
-                    <p>⚡ <strong>Tiempo de entrega:</strong> Inmediato tras confirmar tu pago.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-</body>
-</html>
+.faq-item {
+    background-color: var(--bg-tarjeta);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--color-primario);
+}
+
+.faq-item summary {
+    font-weight: 600;
+    color: var(--color-primario);
+    cursor: pointer;
+    list-style: none; /* Oculta la flecha por defecto del navegador */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Ocultar flecha nativa en navegadores basados en WebKit (Chrome/Safari) */
+.faq-item summary::-webkit-details-marker {
+    display: none; 
+}
+
+/* Flecha personalizada */
+.faq-item summary::after {
+    content: '▼';
+    font-size: 12px;
+    color: var(--texto-secundario);
+    transition: transform 0.3s ease;
+}
+
+/* Gira la flecha cuando está abierto */
+.faq-item[open] summary::after {
+    transform: rotate(180deg);
+    color: var(--color-secundario);
+}
+
+.faq-item p {
+    margin-top: 15px;
+    color: var(--texto-principal);
+    font-size: 14.5px;
+    border-top: 1px solid rgba(0, 229, 255, 0.1);
+    padding-top: 15px;
+    line-height: 1.6;
+}
