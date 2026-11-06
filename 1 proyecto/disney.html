@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compra tu cuenta de Disney+ mensual. Disfruta del contenido de Disney, Pixar, Marvel, Star Wars y National Geographic en alta definición.">
     <title>J&J - Disney+</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos.css?v=6">
 </head>
 <body>
     <header>
-        <nav>
+        <nav aria-label="Navegación principal">
             <a href="index.html" class="logo-marca">J&<span>J</span></a>
             <ul>
                 <li><a href="index.html">🏠 Inicio</a></li>
@@ -19,99 +20,114 @@
     </header>
 
     <main class="detalle-main">
-        <!-- Botón para regresar fácilmente -->
-        <div style="margin-bottom: 20px;">
-            <a href="plataformas.html" style="color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 15px;">
-                ⬅ Volver al Catálogo
-            </a>
+        <!-- Botón de regreso -->
+        <div class="navegacion-secundaria">
+            <a href="plataformas.html" class="btn-volver">⬅ Volver al Catálogo</a>
         </div>
 
-        <div class="tarjeta-detalle">
+        <section class="tarjeta-detalle">
             <!-- Cabecera con Logo y Estado en tiempo real -->
-            <div style="text-align: center; margin-bottom: 20px;">
-                <img src="disney.jpg" alt="Disney+" style="width: 150px; height: 95px; object-fit: contain; background: #000; border-radius: 10px; padding: 8px; border: 1px solid rgba(0, 229, 255, 0.4);">
-                <h1 style="margin: 10px 0 5px 0;">Disney+</h1>
-                <span id="estado-badge" class="disponible" style="font-size: 14px;">Verificando disponibilidad...</span>
+            <div class="cabecera-detalle">
+                <img src="disney.jpg" alt="Logo de Disney+" class="img-detalle">
+                <h1>Disney+</h1>
+                <span id="estado-badge" class="disponible">Verificando disponibilidad...</span>
             </div>
 
-            <p style="text-align: center; color: #00e5ff; font-weight: bold; font-size: 20px; margin-bottom: 25px; background: rgba(0, 229, 255, 0.1); padding: 10px; border-radius: 8px;">
+            <p class="precio-destacado">
                 Precio Individual: $64 MXN (Mensual)
             </p>
 
             <h3>✨ Características del Servicio</h3>
-            <p>
-                ✔️ Servicio 100% <strong>mensual</strong>.<br>
-                ✔️ Contenido de Disney, Pixar, Marvel, Star Wars y National Geographic en alta definición.<br>
-                ✔️ Cuentas estables y garantizadas.
-            </p>
+            <ul class="lista-caracteristicas">
+                <li>✔️ Servicio 100% <strong>mensual</strong>.</li>
+                <li>✔️ Contenido de Disney, Pixar, Marvel, Star Wars y National Geographic en alta definición.</li>
+                <li>✔️ Cuentas estables y garantizadas.</li>
+            </ul>
 
             <h3>🔥 Combos Disponibles</h3>
-            <div style="background-color: #1a0b2e; border-left: 4px solid #ffea00; padding: 12px 15px; border-radius: 6px; margin-bottom: 10px;">
-                <p style="margin: 0;">
-                    📦 <strong>Plan 2 ($190 MXN):</strong> Disney+ + HBO Max + Netflix<br>
-                    📦 <strong>Plan 4 ($310 MXN):</strong> Todas las plataformas
+            <div class="caja-combo">
+                <ul style="list-style: none; padding: 0; margin-bottom: 10px;">
+                    <li>📦 <strong>Plan 2 ($190 MXN):</strong> Disney+ + Max + Netflix</li>
+                    <li>📦 <strong>Plan 4 ($310 MXN):</strong> Todas las plataformas</li>
+                </ul>
+                <p style="font-size: 13.5px; opacity: 0.9;">
+                    * Si deseas combinarlo con otra plataforma que no esté en estos combos, ¡pregunta directamente y te armamos tu plan con precio especial!
                 </p>
             </div>
-            <p style="color: #00e5ff; font-style: italic; font-size: 13px;">
-                * Si deseas combinarlo con otra plataforma que no esté en estos combos, ¡pregunta directamente y te armamos tu plan con precio especial!
-            </p>
 
             <h3>💳 ¿Cómo Comprar?</h3>
-            <p>
-                1. Da clic en el botón de WhatsApp de aquí abajo.<br>
-                2. Indica si deseas la cuenta individual o algún combo.<br>
-                3. Realiza tu pago por transferencia y recibe tus accesos al instante.
-            </p>
+            <ol class="lista-pasos">
+                <li>Da clic en el botón de WhatsApp de aquí abajo.</li>
+                <li>Indica si deseas la cuenta individual o algún combo.</li>
+                <li>Realiza tu pago por transferencia y recibe tus accesos al instante.</li>
+            </ol>
 
             <!-- Botones de Acción Directa a WhatsApp -->
-            <div style="text-align: center; margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-                <a id="btn-wa-individual" href="https://wa.me/522213613862?text=Hola%20J%26J,%20quiero%20comprar%20Disney%2B%20Individual%20por%20%2464%20MXN.%20%C2%BFMe%20pasas%20los%20datos%20de%20pago%3F" target="_blank" class="boton-whatsapp">
-                    💬 Comprar Cuenta ($64 MXN)
+            <div class="acciones-detalle">
+                <a id="btn-wa-individual" href="#" target="_blank" class="boton-whatsapp deshabilitado">
+                    ⏳ Cargando...
                 </a>
 
-                <a id="btn-wa-combo" href="https://wa.me/522213613862?text=Hola%20J%26J,%20me%20interesa%20un%20Combo%20que%20incluya%20Disney%2B.%20%C2%BFMe%20das%20informaci%C3%B3n%3F" target="_blank" class="btn-cta" style="margin-top: 0; font-size: 16px; padding: 14px 22px;">
+                <a id="btn-wa-combo" href="https://wa.me/522213613862?text=Hola%20J%26J,%20me%20interesa%20un%20Combo%20que%20incluya%20Disney%2B.%20%C2%BFMe%20das%20informaci%C3%B3n%3F" target="_blank" class="btn-cta btn-combo">
                     🔥 Pedir en Combo
                 </a>
             </div>
-        </div>
+        </section>
     </main>
 
+    <footer>
+        <div class="footer-contenido">
+            <p>&copy; 2026 J&J Plataformas. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+        </div>
+    </footer>
+
     <script>
-        const CLAVE_PLATAFORMA = "disney"; 
-        const NOMBRE_PLATAFORMA = "Disney+";
-        const PRECIO_PLATAFORMA = "$64 MXN";
-        const TELEFONO_WA = "522213613862";
+        document.addEventListener('DOMContentLoaded', () => {
+            const CLAVE_PLATAFORMA = "disney"; 
+            const NOMBRE_PLATAFORMA = "Disney+";
+            const PRECIO_PLATAFORMA = "$64 MXN";
+            const TELEFONO_WA = "522213613862";
 
-        async function verificarDisponibilidadDetalle() {
-            const badge = document.getElementById('estado-badge');
-            const btnIndividual = document.getElementById('btn-wa-individual');
+            async function verificarDisponibilidadDetalle() {
+                const badge = document.getElementById('estado-badge');
+                const btnIndividual = document.getElementById('btn-wa-individual');
 
-            try {
-                let respuesta = await fetch('estado.json');
-                let estado = await respuesta.json();
-                let disponible = estado[CLAVE_PLATAFORMA];
+                try {
+                    let respuesta = await fetch('estado.json');
+                    if (!respuesta.ok) throw new Error("No se pudo cargar el archivo");
+                    let estado = await respuesta.json();
+                    let disponible = estado[CLAVE_PLATAFORMA];
 
-                if (disponible) {
-                    badge.textContent = "🟢 Disponible para entrega inmediata";
-                    badge.className = "disponible";
-                    const msg = `Hola J&J, quiero comprar ${NOMBRE_PLATAFORMA} Individual por ${PRECIO_PLATAFORMA}. ¿Me pasas los datos de pago?`;
-                    btnIndividual.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(msg)}`;
-                } else {
-                    badge.textContent = "🔴 Agotado temporalmente";
-                    badge.className = "no-disponible";
-                    btnIndividual.removeAttribute('href');
-                    btnIndividual.textContent = "🚫 Sin Stock Individual";
-                    btnIndividual.style.backgroundColor = "#4a3e5d";
-                    btnIndividual.style.color = "#9e93b0";
-                    btnIndividual.style.boxShadow = "none";
-                    btnIndividual.style.pointerEvents = "none";
+                    if (disponible) {
+                        badge.textContent = "🟢 Disponible para entrega inmediata";
+                        badge.className = "disponible";
+                        const msg = `Hola J&J, quiero comprar ${NOMBRE_PLATAFORMA} Individual por ${PRECIO_PLATAFORMA}. ¿Me pasas los datos de pago?`;
+                        btnIndividual.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(msg)}`;
+                        btnIndividual.textContent = `💬 Comprar Cuenta (${PRECIO_PLATAFORMA})`;
+                        btnIndividual.classList.remove('deshabilitado');
+                    } else {
+                        marcarComoAgotado(badge, btnIndividual, "🔴 Agotado temporalmente", "🚫 Sin Stock Individual");
+                    }
+                } catch (error) {
+                    console.error("Error cargando estado:", error);
+                    marcarComoAgotado(badge, btnIndividual, "⚠️ Error de conexión", "🚫 Intenta más tarde");
                 }
-            } catch (error) {
-                badge.textContent = "🟢 Disponible";
             }
-        }
 
-        window.onload = verificarDisponibilidadDetalle;
+            function marcarComoAgotado(badge, boton, textoBadge, textoBoton) {
+                badge.textContent = textoBadge;
+                badge.className = "no-disponible";
+                boton.removeAttribute('href');
+                boton.textContent = textoBoton;
+                boton.classList.add('deshabilitado');
+            }
+
+            verificarDisponibilidadDetalle();
+        });
     </script>
 </body>
 </html>
