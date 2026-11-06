@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra tu cuenta de Crunchyroll Mega Fan mensual. Disfruta del mejor anime en estrenos simultáneos, sin anuncios y en alta definición.">
+    <meta name="description" content="Compra tu perfil de Crunchyroll Mega Fan mensual. Disfruta del mejor anime en estrenos simultáneos, sin anuncios y en alta definición.">
     <title>J&J - Crunchyroll</title>
     <link rel="stylesheet" href="estilos.css?v=6">
 </head>
@@ -34,14 +34,15 @@
             </div>
 
             <p class="precio-destacado">
-                Precio Individual: $40 MXN (Mensual)
+                Precio Individual (1 Perfil): $40 MXN (Mensual)
             </p>
 
             <h3>✨ Características del Servicio</h3>
             <ul class="lista-caracteristicas">
-                <li>✔️ Servicio 100% <strong>mensual</strong>.</li>
+                <li>✔️ Acceso a <strong>1 Perfil</strong> individual (1 dispositivo).</li>
+                <li>✔️ Servicio 100% <strong>mensual</strong> (30 días).</li>
                 <li>✔️ Anime en estrenos simultáneos, sin anuncios y en alta definición.</li>
-                <li>✔️ Cuentas estables y garantizadas.</li>
+                <li>✔️ Servicio estable y garantizado.</li>
             </ul>
 
             <h3>🔥 ¿Buscas un Combo?</h3>
@@ -52,7 +53,7 @@
             <h3>💳 ¿Cómo Comprar?</h3>
             <ol class="lista-pasos">
                 <li>Da clic en el botón de WhatsApp de aquí abajo.</li>
-                <li>Confirma tu pedido de Crunchyroll.</li>
+                <li>Confirma tu pedido de Crunchyroll (1 Perfil).</li>
                 <li>Realiza tu pago y recibe tu acceso al instante.</li>
             </ol>
 
@@ -99,9 +100,9 @@
                     if (disponible) {
                         badge.textContent = "🟢 Disponible para entrega inmediata";
                         badge.className = "disponible";
-                        const msg = `Hola J&J, quiero comprar ${NOMBRE_PLATAFORMA} Individual por ${PRECIO_PLATAFORMA}. ¿Me pasas los datos de pago?`;
+                        const msg = `Hola J&J, quiero comprar 1 Perfil de ${NOMBRE_PLATAFORMA} por ${PRECIO_PLATAFORMA}. ¿Me pasas los datos de pago?`;
                         btnIndividual.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(msg)}`;
-                        btnIndividual.textContent = `💬 Comprar Cuenta (${PRECIO_PLATAFORMA})`;
+                        btnIndividual.textContent = `💬 Comprar 1 Perfil (${PRECIO_PLATAFORMA})`;
                         btnIndividual.classList.remove('deshabilitado');
                     } else {
                         marcarComoAgotado(badge, btnIndividual, "🔴 Agotado temporalmente", "🚫 Sin Stock Individual");
