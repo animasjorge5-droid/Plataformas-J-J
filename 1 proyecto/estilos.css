@@ -1,5 +1,5 @@
 /* =========================================================
-   VARIABLES GLOBALES (Fácil mantenimiento de colores)
+   VARIABLES GLOBALES
    ========================================================= */
 :root {
     --bg-fondo: #120524;
@@ -224,7 +224,6 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* Indicadores de Stock */
 .indicador {
     position: absolute;
     top: 15px;
@@ -249,7 +248,7 @@ p.disponible { color: var(--color-exito); font-weight: 600; font-size: 14px; }
 p.no-disponible { color: var(--color-error); font-weight: 600; font-size: 14px; }
 
 /* =========================================================
-   CARRUSEL (Corregido y superpuesto)
+   CARRUSEL (Corregido)
    ========================================================= */
 .tarjeta-inicio {
     max-width: 500px;
@@ -328,11 +327,14 @@ p.no-disponible { color: var(--color-error); font-weight: 600; font-size: 14px; 
 }
 
 /* =========================================================
-   PÁGINAS DE DETALLE (PLANTILLA INDIVIDUAL)
+   PÁGINAS DE DETALLE (Flechas alineadas a la izquierda)
    ========================================================= */
 .navegacion-secundaria {
     margin-bottom: 20px;
     text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-volver {
@@ -346,6 +348,17 @@ p.no-disponible { color: var(--color-error); font-weight: 600; font-size: 14px; 
 .btn-volver:hover {
     color: #ffffff;
     text-shadow: 0 0 8px var(--color-primario);
+}
+
+.tarjeta-detalle {
+    background-color: var(--bg-tarjeta);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    text-align: left;
 }
 
 .cabecera-detalle {
@@ -392,7 +405,6 @@ p.no-disponible { color: var(--color-error); font-weight: 600; font-size: 14px; 
     padding: 15px;
     border-radius: 6px;
     margin-bottom: 25px;
-    text-align: left;
 }
 
 .caja-combo p {
@@ -405,7 +417,6 @@ p.no-disponible { color: var(--color-error); font-weight: 600; font-size: 14px; 
     margin-bottom: 30px;
     padding-left: 20px;
     color: var(--texto-principal);
-    text-align: left;
 }
 
 .lista-pasos li {
@@ -435,7 +446,7 @@ p.no-disponible { color: var(--color-error); font-weight: 600; font-size: 14px; 
 }
 
 /* =========================================================
-   SECCIÓN DE CONTACTO Y WHATSAPP
+   CONTACTO Y FAQ
    ========================================================= */
 .contenedor-whatsapp {
     max-width: 520px;
@@ -496,9 +507,6 @@ p.no-disponible { color: var(--color-error); font-weight: 600; font-size: 14px; 
     color: var(--texto-secundario);
 }
 
-/* =========================================================
-   PREGUNTAS FRECUENTES (FAQ - PÁGINA CONTACTO)
-   ========================================================= */
 .seccion-faq {
     max-width: 600px;
     margin: 50px auto 20px auto;
