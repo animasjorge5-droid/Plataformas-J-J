@@ -248,7 +248,7 @@ p.disponible { color: var(--color-exito); font-weight: 600; font-size: 14px; }
 p.no-disponible { color: var(--color-error); font-weight: 600; font-size: 14px; }
 
 /* =========================================================
-   CARRUSEL (Corregido)
+   CARRUSEL
    ========================================================= */
 .tarjeta-inicio {
     max-width: 500px;
@@ -327,14 +327,14 @@ p.no-disponible { color: var(--color-error); font-weight: 600; font-size: 14px; 
 }
 
 /* =========================================================
-   PÁGINAS DE DETALLE (Flechas alineadas a la izquierda)
+   PÁGINAS DE DETALLE (Corregido: Alinear flecha a la izquierda)
    ========================================================= */
 .navegacion-secundaria {
-    margin-bottom: 20px;
-    text-align: left;
+    width: 100%;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 20px auto;
+    text-align: left !important;
+    display: block;
 }
 
 .btn-volver {
