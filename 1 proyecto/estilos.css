@@ -100,7 +100,7 @@ main {
 }
 
 h1 {
-    font-size: clamp(28px, 5vw, 38px);
+    font-size: clamp(24px, 5vw, 38px);
     margin-bottom: 15px;
     color: #ffffff;
 }
@@ -117,7 +117,7 @@ h1 {
    ========================================================= */
 .contenedor-plataformas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
     width: 100%;
     margin: 30px auto;
@@ -603,4 +603,138 @@ footer {
 
 .footer-links a:hover {
     color: var(--color-secundario);
+}
+
+/* =========================================================
+   DISEÑO RESPONSIVO MÓVIL (Cuadrícula tipo PC en Celular)
+   ========================================================= */
+@media (max-width: 768px) {
+    header {
+        padding: 12px 10px;
+    }
+
+    header nav {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    header nav ul {
+        gap: 8px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Fuerza 2 columnas iguales en celular como en PC */
+    .contenedor-plataformas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 15px auto;
+    }
+
+    .tarjeta {
+        padding: 12px 10px;
+        border-radius: 12px;
+    }
+
+    .tarjeta img {
+        height: 75px;
+        padding: 6px;
+        margin-bottom: 8px;
+    }
+
+    .tarjeta h3 {
+        font-size: 16px;
+    }
+
+    .detalles-cuenta {
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+
+    .precio {
+        font-size: 17px;
+        margin: 6px 0 10px 0;
+    }
+
+    p.disponible,
+    p.no-disponible {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .btn-comprar {
+        padding: 8px 6px;
+        font-size: 12.5px;
+        border-radius: 6px;
+    }
+
+    .indicador {
+        top: 10px;
+        left: 10px;
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Pasos de compra también en 2 columnas en móvil */
+    .contenedor-pasos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .paso {
+        padding: 15px 10px;
+    }
+
+    .paso h4 {
+        font-size: 15px;
+    }
+
+    .paso p {
+        font-size: 12px;
+    }
+
+    /* Ajustes de páginas de detalle y carrusel en móvil */
+    .carrusel {
+        height: 180px;
+    }
+
+    .tarjeta-detalle {
+        padding: 20px 15px;
+    }
+
+    .acciones-detalle .btn-comprar,
+    .acciones-detalle .btn-cta {
+        width: 100%;
+    }
+}
+
+/* Pantallas muy pequeñas (3 columnas si lo prefieres o ajuste fino en 2) */
+@media (max-width: 360px) {
+    .contenedor-plataformas {
+        gap: 8px;
+    }
+
+    .tarjeta {
+        padding: 10px 8px;
+    }
+
+    .btn-comprar {
+        font-size: 11px;
+    }
 }
