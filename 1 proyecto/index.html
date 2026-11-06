@@ -2,10 +2,52 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="J&J - Venta de cuentas de plataformas de streaming con entrega inmediata, garantía y los mejores precios.">
     <title>J&J - Inicio</title>
-    <link rel="stylesheet" href="estilos.css?v=5">
+    <!-- Subimos a v=6 para forzar al celular a cargar el nuevo diseño responsivo -->
+    <link rel="stylesheet" href="estilos.css?v=6">
+    <style>
+        /* Ajuste responsivo exclusivo para que Inicio luzca como PC en celular */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .btn-cta {
+                width: 100%;
+                max-width: 320px;
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+            .tarjeta-inicio {
+                margin: 20px auto;
+                padding: 12px;
+            }
+            /* Mantiene los 3 pasos alineados en una sola fila horizontal como en PC */
+            .contenedor-pasos {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 8px !important;
+                margin-top: 25px !important;
+            }
+            .paso {
+                padding: 12px 6px !important;
+                border-radius: 10px !important;
+            }
+            .icono-paso {
+                font-size: 22px !important;
+                margin-bottom: 6px !important;
+            }
+            .paso h4 {
+                font-size: 12.5px !important;
+                margin-bottom: 4px !important;
+            }
+            .paso p {
+                font-size: 11px !important;
+                line-height: 1.3 !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,17 +69,17 @@
             <a href="plataformas.html" class="btn-cta">🚀 Ver Catálogo y Precios</a>
         </section>
 
-        <!-- Sección del Carrusel (Asegúrate de que las imágenes estén en la misma carpeta) -->
+        <!-- Sección del Carrusel -->
         <section class="tarjeta-inicio">
             <div class="carrusel" aria-label="Carrusel de plataformas disponibles">
-                <img src="appletv.jpg" class="slider-img activa" alt="Apple TV+">
-                <img src="crunchyroll.jpg" class="slider-img" alt="Crunchyroll">
-                <img src="disney.jpg" class="slider-img" alt="Disney+">
-                <img src="max.jpg" class="slider-img" alt="Max"> 
-                <img src="netflix.jpg" class="slider-img" alt="Netflix">
-                <img src="paramount.jpg" class="slider-img" alt="Paramount+">
-                <img src="prime.jpg" class="slider-img" alt="Prime Video">
-                <img src="spotify.jpg" class="slider-img" alt="Spotify">
+                <img src="appletv.jpg" class="slider-img activa" alt="Apple TV+" decoding="async">
+                <img src="crunchyroll.jpg" class="slider-img" alt="Crunchyroll" loading="lazy" decoding="async">
+                <img src="disney.jpg" class="slider-img" alt="Disney+" loading="lazy" decoding="async">
+                <img src="max.jpg" class="slider-img" alt="Max" loading="lazy" decoding="async"> 
+                <img src="netflix.jpg" class="slider-img" alt="Netflix" loading="lazy" decoding="async">
+                <img src="paramount.jpg" class="slider-img" alt="Paramount+" loading="lazy" decoding="async">
+                <img src="prime.jpg" class="slider-img" alt="Prime Video" loading="lazy" decoding="async">
+                <img src="spotify.jpg" class="slider-img" alt="Spotify" loading="lazy" decoding="async">
             </div>
         </section>
 
