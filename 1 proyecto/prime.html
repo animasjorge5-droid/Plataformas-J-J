@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compra tu cuenta de Prime Video mensual. Disfruta de series originales, películas exclusivas y deportes en streaming.">
     <title>J&J - Prime Video</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilos.css?v=6">
 </head>
 <body>
     <header>
-        <nav>
+        <nav aria-label="Navegación principal">
             <a href="index.html" class="logo-marca">J&<span>J</span></a>
             <ul>
                 <li><a href="index.html">🏠 Inicio</a></li>
@@ -19,93 +20,108 @@
     </header>
 
     <main class="detalle-main">
-        <!-- Botón para regresar fácilmente -->
-        <div style="margin-bottom: 20px;">
-            <a href="plataformas.html" style="color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 15px;">
-                ⬅ Volver al Catálogo
-            </a>
+        <!-- Botón de regreso alineado correctamente a la izquierda -->
+        <div class="navegacion-secundaria">
+            <a href="plataformas.html" class="btn-volver">⬅ Volver al Catálogo</a>
         </div>
 
-        <div class="tarjeta-detalle">
+        <section class="tarjeta-detalle">
             <!-- Cabecera con Logo y Estado en tiempo real -->
-            <div style="text-align: center; margin-bottom: 20px;">
-                <img src="prime.jpg" alt="Prime Video" style="width: 150px; height: 95px; object-fit: contain; background: #000; border-radius: 10px; padding: 8px; border: 1px solid rgba(0, 229, 255, 0.4);">
-                <h1 style="margin: 10px 0 5px 0;">Prime Video</h1>
-                <span id="estado-badge" class="disponible" style="font-size: 14px;">Verificando disponibilidad...</span>
+            <div class="cabecera-detalle">
+                <img src="prime.jpg" alt="Logo de Prime Video" class="img-detalle">
+                <h1>Prime Video</h1>
+                <span id="estado-badge" class="disponible">Verificando disponibilidad...</span>
             </div>
 
-            <p style="text-align: center; color: #00e5ff; font-weight: bold; font-size: 20px; margin-bottom: 25px; background: rgba(0, 229, 255, 0.1); padding: 10px; border-radius: 8px;">
+            <p class="precio-destacado">
                 Precio Individual: $44 MXN (Mensual)
             </p>
 
             <h3>✨ Características del Servicio</h3>
-            <p>
-                ✔️ Servicio 100% <strong>mensual</strong>.<br>
-                ✔️ Series originales, películas exclusivas y deportes en streaming.<br>
-                ✔️ Cuentas estables y garantizadas.
-            </p>
+            <ul class="lista-caracteristicas">
+                <li>✔️ Servicio 100% <strong>mensual</strong>.</li>
+                <li>✔️ Series originales, películas exclusivas y deportes en streaming.</li>
+                <li>✔️ Cuentas estables y garantizadas.</li>
+            </ul>
 
             <h3>🔥 ¿Buscas un Combo?</h3>
-            <p style="color: #00e5ff; font-style: italic; font-size: 14px; background-color: #1a0b2e; border-left: 4px solid #ffea00; padding: 12px 15px; border-radius: 6px;">
-                📦 Si deseas combinar <strong>Prime Video</strong> con otra plataforma o adquirir el <strong>Plan 4 ($310 MXN con todas las plataformas)</strong>, ¡pregúntanos directamente y te armamos tu paquete con precio especial!
-            </p>
+            <div class="caja-combo">
+                <p>📦 Si deseas combinar <strong>Prime Video</strong> con otra plataforma o adquirir el <strong>Plan 4 ($310 MXN con todas las plataformas)</strong>, ¡pregúntanos directamente y te armamos tu paquete con precio especial!</p>
+            </div>
 
             <h3>💳 ¿Cómo Comprar?</h3>
-            <p>
-                1. Da clic en el botón de WhatsApp de aquí abajo.<br>
-                2. Confirma tu pedido de Prime Video.<br>
-                3. Realiza tu pago y recibe tu cuenta al instante.
-            </p>
+            <ol class="lista-pasos">
+                <li>Da clic en el botón de WhatsApp de aquí abajo.</li>
+                <li>Confirma tu pedido de Prime Video.</li>
+                <li>Realiza tu pago y recibe tu cuenta al instante.</li>
+            </ol>
 
             <!-- Botones de Acción Directa a WhatsApp -->
-            <div style="text-align: center; margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-                <a id="btn-wa-individual" href="https://wa.me/522213613862?text=Hola%20J%26J,%20quiero%20comprar%20Prime%20Video%20Individual%20por%20%2444%20MXN.%20%C2%BFMe%20pasas%20los%20datos%20de%20pago%3F" target="_blank" class="boton-whatsapp">
-                    💬 Comprar Cuenta ($44 MXN)
+            <div class="acciones-detalle">
+                <a id="btn-wa-individual" href="#" target="_blank" class="boton-whatsapp deshabilitado">
+                    ⏳ Cargando...
                 </a>
 
-                <a id="btn-wa-combo" href="https://wa.me/522213613862?text=Hola%20J%26J,%20me%20interesa%20armar%20un%20Combo%20que%20incluya%20Prime%20Video.%20%C2%BFMe%20das%20informaci%C3%B3n%3F" target="_blank" class="btn-cta" style="margin-top: 0; font-size: 16px; padding: 14px 22px;">
+                <a id="btn-wa-combo" href="https://wa.me/522213613862?text=Hola%20J%26J,%20me%20interesa%20armar%20un%20Combo%20que%20incluya%20Prime%20Video.%20%C2%BFMe%20das%20informaci%C3%B3n%3F" target="_blank" class="btn-cta btn-combo">
                     🔥 Cotizar en Combo
                 </a>
             </div>
-        </div>
+        </section>
     </main>
 
+    <footer>
+        <div class="footer-contenido">
+            <p>&copy; 2026 J&J Plataformas. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+        </div>
+    </footer>
+
     <script>
-        const CLAVE_PLATAFORMA = "prime"; 
-        const NOMBRE_PLATAFORMA = "Prime Video";
-        const PRECIO_PLATAFORMA = "$44 MXN";
-        const TELEFONO_WA = "522213613862";
+        document.addEventListener('DOMContentLoaded', () => {
+            const CLAVE_PLATAFORMA = "prime"; 
+            const NOMBRE_PLATAFORMA = "Prime Video";
+            const PRECIO_PLATAFORMA = "$44 MXN";
+            const TELEFONO_WA = "522213613862";
 
-        async function verificarDisponibilidadDetalle() {
-            const badge = document.getElementById('estado-badge');
-            const btnIndividual = document.getElementById('btn-wa-individual');
+            async function verificarDisponibilidadDetalle() {
+                const badge = document.getElementById('estado-badge');
+                const btnIndividual = document.getElementById('btn-wa-individual');
 
-            try {
-                let respuesta = await fetch('estado.json');
-                let estado = await respuesta.json();
-                let disponible = estado[CLAVE_PLATAFORMA];
+                try {
+                    let respuesta = await fetch('estado.json');
+                    if (!respuesta.ok) throw new Error("No se pudo cargar el archivo");
+                    let estado = await respuesta.json();
+                    let disponible = estado[CLAVE_PLATAFORMA];
 
-                if (disponible) {
-                    badge.textContent = "🟢 Disponible para entrega inmediata";
-                    badge.className = "disponible";
-                    const msg = `Hola J&J, quiero comprar ${NOMBRE_PLATAFORMA} Individual por ${PRECIO_PLATAFORMA}. ¿Me pasas los datos de pago?`;
-                    btnIndividual.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(msg)}`;
-                } else {
-                    badge.textContent = "🔴 Agotado temporalmente";
-                    badge.className = "no-disponible";
-                    btnIndividual.removeAttribute('href');
-                    btnIndividual.textContent = "🚫 Sin Stock Individual";
-                    btnIndividual.style.backgroundColor = "#4a3e5d";
-                    btnIndividual.style.color = "#9e93b0";
-                    btnIndividual.style.boxShadow = "none";
-                    btnIndividual.style.pointerEvents = "none";
+                    if (disponible) {
+                        badge.textContent = "🟢 Disponible para entrega inmediata";
+                        badge.className = "disponible";
+                        const msg = `Hola J&J, quiero comprar ${NOMBRE_PLATAFORMA} Individual por ${PRECIO_PLATAFORMA}. ¿Me pasas los datos de pago?`;
+                        btnIndividual.href = `https://wa.me/${TELEFONO_WA}?text=${encodeURIComponent(msg)}`;
+                        btnIndividual.textContent = `💬 Comprar Cuenta (${PRECIO_PLATAFORMA})`;
+                        btnIndividual.classList.remove('deshabilitado');
+                    } else {
+                        marcarComoAgotado(badge, btnIndividual, "🔴 Agotado temporalmente", "🚫 Sin Stock Individual");
+                    }
+                } catch (error) {
+                    console.error("Error cargando estado:", error);
+                    marcarComoAgotado(badge, btnIndividual, "⚠️ Error de conexión", "🚫 Intenta más tarde");
                 }
-            } catch (error) {
-                badge.textContent = "🟢 Disponible";
             }
-        }
 
-        window.onload = verificarDisponibilidadDetalle;
+            function marcarComoAgotado(badge, boton, textoBadge, textoBoton) {
+                badge.textContent = textoBadge;
+                badge.className = "no-disponible";
+                boton.removeAttribute('href');
+                boton.textContent = textoBoton;
+                boton.classList.add('deshabilitado');
+            }
+
+            verificarDisponibilidadDetalle();
+        });
     </script>
 </body>
 </html>
