@@ -1,11 +1,11 @@
 {
     "netflix": true,
     "spotify": true,
-    "disney": false,
+    "disney": true,
     "prime": true,
     "max": true,
     "paramount": false,
     "crunchyroll": true,
     "appletv": true,
-    "vix": false
+    "vix": true
 }
